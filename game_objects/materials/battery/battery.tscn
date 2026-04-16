@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dugts53t3y5wu"]
+
+[ext_resource type="PackedScene" uid="uid://b536kjx6odoyg" path="res://game_objects/materials/battery/battery.glb" id="1_gnh5o"]
+[ext_resource type="Script" uid="uid://mja2l67574n1" path="res://game_objects/materials/gear/material_body.gd" id="1_n72sq"]
+[ext_resource type="Script" uid="uid://c5gmtt0vxj0mo" path="res://game_objects/materials/gear/material_model.gd" id="3_8cqr1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eahow"]
+radius = 0.34643674
+
+[node name="Battery" type="CharacterBody3D" unique_id=410880153 groups=["material"]]
+collision_layer = 2
+script = ExtResource("1_n72sq")
+material_name = "battery"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1776758690]
+shape = SubResource("SphereShape3D_eahow")
+
+[node name="ModelRoot" type="Node3D" parent="." unique_id=1715822645]
+script = ExtResource("3_8cqr1")
+
+[node name="battery" parent="ModelRoot" unique_id=642374845 instance=ExtResource("1_gnh5o")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)

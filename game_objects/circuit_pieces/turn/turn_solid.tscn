@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dvire8gshethr"]
+
+[ext_resource type="PackedScene" uid="uid://cf0otbd38r4rx" path="res://game_objects/circuit_pieces/logic/solid_body.tscn" id="1_a78gh"]
+[ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="2_r8gvd"]
+[ext_resource type="PackedScene" uid="uid://yowebru2gidd" path="res://game_objects/circuit_pieces/turn/turn.glb" id="3_gvlc6"]
+[ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="4_3qeuh"]
+[ext_resource type="PackedScene" uid="uid://y5jcx0qyyi3r" path="res://game_objects/circuit_pieces/logic/transmission_logic.tscn" id="5_ae7wa"]
+
+[node name="TurnSolid" type="Node3D" unique_id=732407780]
+
+[node name="SolidBody" parent="." unique_id=543779264 instance=ExtResource("1_a78gh")]
+
+[node name="Pin" parent="SolidBody" unique_id=1960732561 instance=ExtResource("2_r8gvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
+
+[node name="Pin2" parent="SolidBody" unique_id=990762268 instance=ExtResource("2_r8gvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+
+[node name="turn" parent="SolidBody" unique_id=760747182 instance=ExtResource("3_gvlc6")]
+
+[node name="Cube" parent="SolidBody/turn" index="0" unique_id=254717233]
+surface_material_override/0 = ExtResource("4_3qeuh")
+
+[node name="TransmissionLogic" parent="." unique_id=1826943949 node_paths=PackedStringArray("pins", "model") instance=ExtResource("5_ae7wa")]
+pins = [NodePath("../SolidBody/Pin"), NodePath("../SolidBody/Pin2")]
+model = NodePath("../SolidBody/turn/Cube")
+
+[editable path="SolidBody/turn"]

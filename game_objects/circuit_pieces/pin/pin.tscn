@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://17r12hsebhnb"]
+
+[ext_resource type="Script" uid="uid://dr4u154blfqrr" path="res://game_objects/circuit_pieces/pin/pin.gd" id="1_pjnmy"]
+[ext_resource type="Shape3D" uid="uid://h7txeqlv3n6p" path="res://game_objects/circuit_pieces/pin/pin_shape.tres" id="2_6k8v3"]
+
+[node name="Pin" type="Area3D" unique_id=1960732561 groups=["pin"]]
+collision_layer = 16
+collision_mask = 16
+input_ray_pickable = false
+script = ExtResource("1_pjnmy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1951862186]
+shape = ExtResource("2_6k8v3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

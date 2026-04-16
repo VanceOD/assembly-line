@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://blgwqeushppf5"]
+
+[ext_resource type="Script" uid="uid://dblueu6iune14" path="res://game_objects/circuit_pieces/logic/rotate_on_click.gd" id="1_dcfjw"]
+[ext_resource type="Shape3D" uid="uid://tpfv8qc06vxg" path="res://game_objects/circuit_pieces/logic/circuit_piece_shape.tres" id="2_hug0r"]
+
+[node name="RotatableBody" type="CharacterBody3D" unique_id=984764501]
+script = ExtResource("1_dcfjw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1272137249]
+shape = ExtResource("2_hug0r")

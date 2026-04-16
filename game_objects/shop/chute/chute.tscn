@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c1v5ls4aq88nm"]
+
+[ext_resource type="PackedScene" uid="uid://blxmur5htaulh" path="res://game_objects/shop/chute/chute.glb" id="1_2d2ff"]
+[ext_resource type="Script" uid="uid://bg027isgxg7mq" path="res://game_objects/shop/chute/collection_area.gd" id="2_8iwdo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8iwdo"]
+size = Vector3(1.75, 1.75, 1)
+
+[node name="Chute" type="Node3D" unique_id=1032801184]
+
+[node name="chute" parent="." unique_id=1250552784 instance=ExtResource("1_2d2ff")]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollectionArea" type="Area3D" parent="." unique_id=158846823 groups=["collection_area"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20973146, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_8iwdo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectionArea" unique_id=1254472794]
+shape = SubResource("BoxShape3D_8iwdo")
+
+[connection signal="body_entered" from="CollectionArea" to="CollectionArea" method="_on_body_entered"]

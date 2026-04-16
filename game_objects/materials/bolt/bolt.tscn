@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dx56ve2ouf7yd"]
+
+[ext_resource type="PackedScene" uid="uid://drenu5culygah" path="res://game_objects/materials/bolt/bolt.glb" id="1_odj70"]
+[ext_resource type="Script" uid="uid://mja2l67574n1" path="res://game_objects/materials/gear/material_body.gd" id="1_qih6a"]
+[ext_resource type="Script" uid="uid://c5gmtt0vxj0mo" path="res://game_objects/materials/gear/material_model.gd" id="2_4jsm7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4vgav"]
+radius = 0.27616298
+
+[node name="Bolt" type="CharacterBody3D" unique_id=274237677 groups=["material"]]
+collision_layer = 2
+script = ExtResource("1_qih6a")
+material_name = "bolt"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1343833357]
+shape = SubResource("SphereShape3D_4vgav")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1879053388]
+script = ExtResource("2_4jsm7")
+
+[node name="bolt" parent="Node3D" unique_id=1441095793 instance=ExtResource("1_odj70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097396776, 0)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cb2bxl2l8gspo"]
+
+[ext_resource type="PackedScene" uid="uid://tmogtcs0mlwg" path="res://game_objects/shop/conveyor_belt/conveyor_slat.glb" id="1_2x6bl"]
+[ext_resource type="Script" uid="uid://dmn73lkglbcbe" path="res://game_objects/shop/conveyor_belt/conveyor_slat.gd" id="1_a4fob"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2x6bl"]
+size = Vector3(0.3657837, 0.13726807, 0.6182251)
+
+[node name="ConveyorSlat" type="CharacterBody3D" unique_id=1049498670 groups=["conveyor_slats"]]
+collision_mask = 0
+script = ExtResource("1_a4fob")
+
+[node name="conveyor_slat" parent="." unique_id=699779513 instance=ExtResource("1_2x6bl")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=888356676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00088500977, -0.0049743652, -0.002105713)
+shape = SubResource("BoxShape3D_2x6bl")

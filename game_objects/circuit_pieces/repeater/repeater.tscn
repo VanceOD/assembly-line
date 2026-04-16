@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cqk0fuf3aqkra"]
+
+[ext_resource type="PackedScene" uid="uid://blgwqeushppf5" path="res://game_objects/circuit_pieces/logic/rotatable_body.tscn" id="1_ehdag"]
+[ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="2_upkqn"]
+[ext_resource type="PackedScene" uid="uid://jnoyip26br0p" path="res://game_objects/circuit_pieces/logic/repeater_logic.tscn" id="3_eh37g"]
+[ext_resource type="PackedScene" uid="uid://btum8hldbtf5c" path="res://game_objects/circuit_pieces/repeater/repeater.glb" id="4_upkqn"]
+
+[node name="Repeater" type="Node3D" unique_id=74035953]
+
+[node name="RotatableBody" parent="." unique_id=984764501 instance=ExtResource("1_ehdag")]
+
+[node name="Pin" parent="RotatableBody" unique_id=1960732561 instance=ExtResource("2_upkqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
+
+[node name="Pin2" parent="RotatableBody" unique_id=386049098 instance=ExtResource("2_upkqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+
+[node name="RepeaterLogic" parent="RotatableBody" unique_id=1694190573 node_paths=PackedStringArray("pins", "model") instance=ExtResource("3_eh37g")]
+pins = [NodePath("../Pin"), NodePath("../Pin2")]
+model = NodePath("../repeater/Cube")
+
+[node name="repeater" parent="RotatableBody" unique_id=1155043399 instance=ExtResource("4_upkqn")]
+
+[editable path="RotatableBody/repeater"]

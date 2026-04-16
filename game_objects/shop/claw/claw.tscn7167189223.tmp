@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://qb3hbtdr2ukm"]
+
+[ext_resource type="PackedScene" uid="uid://c2mpa2n5bhucw" path="res://game_objects/shop/claw/claw.glb" id="1_51741"]
+[ext_resource type="Script" uid="uid://bqswrx3ado4dn" path="res://game_objects/shop/claw/claw.gd" id="1_jyta1"]
+[ext_resource type="Script" uid="uid://dabwih5chhmao" path="res://game_objects/shop/claw/grab_area.gd" id="3_vkgbx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51741"]
+size = Vector3(1, 2.773468, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_51741"]
+
+[node name="Claw" type="CharacterBody3D" unique_id=139899654 groups=["material"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_jyta1")
+
+[node name="ModelRoot" type="Node3D" parent="." unique_id=1855524736]
+
+[node name="claw" parent="ModelRoot" unique_id=2091207429 instance=ExtResource("1_51741")]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0.5803824, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=13252050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1749115, 0)
+shape = SubResource("BoxShape3D_51741")
+
+[node name="GrabArea" type="Area3D" parent="." unique_id=610928828]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_vkgbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabArea" unique_id=1032069442]
+shape = SubResource("SphereShape3D_51741")
+
+[connection signal="body_entered" from="GrabArea" to="GrabArea" method="_on_body_entered"]
+
+[editable path="ModelRoot/claw"]

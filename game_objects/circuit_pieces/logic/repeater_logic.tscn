@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://jnoyip26br0p"]
+
+[ext_resource type="Script" uid="uid://2jwfphsr67f0" path="res://game_objects/circuit_pieces/logic/transmission_logic.gd" id="1_5ndip"]
+
+[node name="RepeaterLogic" type="Node" unique_id=1694190573]
+script = ExtResource("1_5ndip")
+power_delta = 5

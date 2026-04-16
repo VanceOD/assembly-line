@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ecq2cjxkb8dy"]
+
+[ext_resource type="Shape3D" uid="uid://tpfv8qc06vxg" path="res://game_objects/circuit_pieces/logic/circuit_piece_shape.tres" id="1_37jsk"]
+[ext_resource type="PackedScene" uid="uid://c42xs5b1n4atv" path="res://game_objects/circuit_pieces/start/start.glb" id="2_epexk"]
+[ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="3_2fw0p"]
+[ext_resource type="Script" uid="uid://by30lowclvwyq" path="res://game_objects/circuit_pieces/start/start_block_logic.gd" id="3_epexk"]
+[ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="3_ev8hq"]
+
+[node name="Start" type="Node3D" unique_id=369176258]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2011280820]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=627317412]
+shape = ExtResource("1_37jsk")
+
+[node name="start" parent="CharacterBody3D" unique_id=2084668456 instance=ExtResource("2_epexk")]
+
+[node name="Cube" parent="CharacterBody3D/start" index="0" unique_id=2053390630]
+surface_material_override/0 = ExtResource("3_2fw0p")
+
+[node name="Pin" parent="CharacterBody3D" unique_id=1960732561 instance=ExtResource("3_ev8hq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
+
+[node name="StartBlockLogic" type="Node" parent="." unique_id=906014601 node_paths=PackedStringArray("pin", "model")]
+script = ExtResource("3_epexk")
+pin = NodePath("../CharacterBody3D/Pin")
+model = NodePath("../CharacterBody3D/start/Cube")
+
+[editable path="CharacterBody3D/start"]

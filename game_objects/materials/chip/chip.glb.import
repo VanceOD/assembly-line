@@ -1,0 +1,60 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bn1imsa0c3ule"
+path="res://.godot/imported/chip.glb-b5b4ccbbb6401f14d0e3584c12255e7a.scn"
+
+[deps]
+
+source_file="res://game_objects/materials/chip/chip.glb"
+dest_files=["res://.godot/imported/chip.glb-b5b4ccbbb6401f14d0e3584c12255e7a.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"chip": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/materials/chip/chip_material.tres",
+"use_external/path": "uid://cm831y1a2jgm0"
+},
+"dye": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/materials/chip/dye_material.tres",
+"use_external/path": "uid://cltanidh7vu55"
+},
+"pins": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/materials/chip/pins_material.tres",
+"use_external/path": "uid://b51nvw8dnqj4b"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

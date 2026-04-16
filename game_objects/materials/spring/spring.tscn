@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bm3eedmkxhhdl"]
+
+[ext_resource type="PackedScene" uid="uid://h81fvo0i8s37" path="res://game_objects/materials/spring/spring.glb" id="1_oto2r"]
+[ext_resource type="Script" uid="uid://mja2l67574n1" path="res://game_objects/materials/gear/material_body.gd" id="1_sjnbx"]
+[ext_resource type="Script" uid="uid://c5gmtt0vxj0mo" path="res://game_objects/materials/gear/material_model.gd" id="2_quxbw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8u28f"]
+radius = 0.2617197
+
+[node name="Spring" type="CharacterBody3D" unique_id=1095392406 groups=["material"]]
+collision_layer = 2
+script = ExtResource("1_sjnbx")
+material_name = "spring"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1253356361]
+shape = SubResource("SphereShape3D_8u28f")
+
+[node name="ModelRoot" type="Node3D" parent="." unique_id=1943809488]
+script = ExtResource("2_quxbw")
+
+[node name="spring" parent="ModelRoot" unique_id=529054194 instance=ExtResource("1_oto2r")]

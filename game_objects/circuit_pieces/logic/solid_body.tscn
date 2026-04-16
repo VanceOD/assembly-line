@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cf0otbd38r4rx"]
+
+[ext_resource type="Shape3D" uid="uid://tpfv8qc06vxg" path="res://game_objects/circuit_pieces/logic/circuit_piece_shape.tres" id="1_v5fe1"]
+
+[node name="SolidBody" type="CharacterBody3D" unique_id=543779264]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=390064523]
+shape = ExtResource("1_v5fe1")

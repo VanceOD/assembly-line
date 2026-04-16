@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c0umsjdqfjm2q"]
+
+[ext_resource type="PackedScene" uid="uid://360tyl5x5700" path="res://game_objects/materials/gear/gear.glb" id="1_h8v7h"]
+[ext_resource type="Script" uid="uid://mja2l67574n1" path="res://game_objects/materials/gear/material_body.gd" id="1_lktt8"]
+[ext_resource type="Script" uid="uid://c5gmtt0vxj0mo" path="res://game_objects/materials/gear/material_model.gd" id="2_3fcli"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lktt8"]
+radius = 0.41121876
+
+[node name="Gear" type="CharacterBody3D" unique_id=268245297 groups=["material"]]
+collision_layer = 2
+script = ExtResource("1_lktt8")
+material_name = "gear"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=112478197]
+shape = SubResource("SphereShape3D_lktt8")
+
+[node name="gear" parent="." unique_id=364527531 instance=ExtResource("1_h8v7h")]
+script = ExtResource("2_3fcli")

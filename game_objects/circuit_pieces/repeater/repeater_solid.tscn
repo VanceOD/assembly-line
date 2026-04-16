@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cntiwl1fprtai"]
+
+[ext_resource type="PackedScene" uid="uid://cf0otbd38r4rx" path="res://game_objects/circuit_pieces/logic/solid_body.tscn" id="1_u1vkm"]
+[ext_resource type="PackedScene" uid="uid://btum8hldbtf5c" path="res://game_objects/circuit_pieces/repeater/repeater.glb" id="2_3m4oi"]
+[ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="3_duhro"]
+[ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="4_f2fpb"]
+[ext_resource type="PackedScene" uid="uid://jnoyip26br0p" path="res://game_objects/circuit_pieces/logic/repeater_logic.tscn" id="5_qub41"]
+
+[node name="RepeaterSolid" type="Node3D" unique_id=809114633]
+
+[node name="SolidBody" parent="." unique_id=543779264 instance=ExtResource("1_u1vkm")]
+
+[node name="repeater" parent="SolidBody" unique_id=1155043399 instance=ExtResource("2_3m4oi")]
+
+[node name="Cube" parent="SolidBody/repeater" index="0" unique_id=765535884]
+surface_material_override/0 = ExtResource("3_duhro")
+
+[node name="Pin" parent="." unique_id=1960732561 instance=ExtResource("4_f2fpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
+
+[node name="Pin2" parent="." unique_id=1016527833 instance=ExtResource("4_f2fpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+
+[node name="RepeaterLogic" parent="." unique_id=1694190573 node_paths=PackedStringArray("pins", "model") instance=ExtResource("5_qub41")]
+pins = [NodePath("../Pin"), NodePath("../Pin2")]
+model = NodePath("../SolidBody/repeater/Cube")
+
+[editable path="SolidBody/repeater"]

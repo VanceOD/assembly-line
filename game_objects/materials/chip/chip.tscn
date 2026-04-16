@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dliwp5tnipqvj"]
+
+[ext_resource type="Script" uid="uid://mja2l67574n1" path="res://game_objects/materials/gear/material_body.gd" id="1_ivnng"]
+[ext_resource type="Script" uid="uid://c5gmtt0vxj0mo" path="res://game_objects/materials/gear/material_model.gd" id="2_3edge"]
+[ext_resource type="PackedScene" uid="uid://bn1imsa0c3ule" path="res://game_objects/materials/chip/chip.glb" id="3_3edge"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3edge"]
+radius = 0.25606236
+
+[node name="Chip" type="CharacterBody3D" unique_id=1823541614 groups=["material"]]
+collision_layer = 2
+script = ExtResource("1_ivnng")
+material_name = "chip"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=939845131]
+shape = SubResource("SphereShape3D_3edge")
+
+[node name="ModelRoot" type="Node3D" parent="." unique_id=2003841066]
+script = ExtResource("2_3edge")
+
+[node name="chip" parent="ModelRoot" unique_id=1830672233 instance=ExtResource("3_3edge")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://btqytw2edudsm"]
+
+[ext_resource type="Script" uid="uid://dblueu6iune14" path="res://game_objects/circuit_pieces/logic/rotate_on_click.gd" id="1_5wwo5"]
+[ext_resource type="PackedScene" uid="uid://b4fm0u7736g5e" path="res://game_objects/circuit_pieces/blank/blank.glb" id="1_gi2ca"]
+[ext_resource type="Shape3D" uid="uid://tpfv8qc06vxg" path="res://game_objects/circuit_pieces/logic/circuit_piece_shape.tres" id="3_gi37n"]
+
+[node name="Blank" type="Node3D" unique_id=951675767]
+
+[node name="Body" type="CharacterBody3D" parent="." unique_id=1897559612]
+script = ExtResource("1_5wwo5")
+
+[node name="blank" parent="Body" unique_id=834143701 instance=ExtResource("1_gi2ca")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=902887878]
+shape = ExtResource("3_gi37n")
