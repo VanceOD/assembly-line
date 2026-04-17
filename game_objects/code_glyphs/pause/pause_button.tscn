@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://17r8qwxe3rdk"]
+
+[ext_resource type="Script" uid="uid://b4uwdk2l4m4s7" path="res://game_objects/code_glyphs/common/code_block_button.gd" id="1_0qeql"]
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="2_lsks3"]
+[ext_resource type="PackedScene" uid="uid://d152rf38bovf" path="res://game_objects/code_glyphs/pause/pause.glb" id="3_5p65x"]
+
+[node name="PauseButton" type="CharacterBody3D" unique_id=621541852]
+script = ExtResource("1_0qeql")
+command = "pause"
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("2_lsks3")]
+
+[node name="pause" parent="GlyphCollisionShape" unique_id=614179271 instance=ExtResource("3_5p65x")]

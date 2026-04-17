@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://caujk2s6smpv3"]
+
+[ext_resource type="Script" uid="uid://b4uwdk2l4m4s7" path="res://game_objects/code_glyphs/common/code_block_button.gd" id="1_d7qbm"]
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="2_2yo32"]
+[ext_resource type="PackedScene" uid="uid://4l4x10w6vlgg" path="res://game_objects/code_glyphs/loop/loop.glb" id="3_jlqq8"]
+
+[node name="LoopButton" type="CharacterBody3D" unique_id=1409336812]
+script = ExtResource("1_d7qbm")
+command = "loop"
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("2_2yo32")]
+
+[node name="loop" parent="GlyphCollisionShape" unique_id=2078680925 instance=ExtResource("3_jlqq8")]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c870csks171rt"]
+
+[ext_resource type="Script" uid="uid://brn3xch7ou0el" path="res://game_objects/code_glyphs/common/code_block.gd" id="1_4rrax"]
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="2_r26y0"]
+[ext_resource type="PackedScene" uid="uid://dvpl5nmpvgou4" path="res://game_objects/code_glyphs/increase/increase.glb" id="3_bjwi2"]
+
+[node name="IncreaseGlyph" type="CharacterBody3D" unique_id=80706729 node_paths=PackedStringArray("model")]
+script = ExtResource("1_4rrax")
+command = "increase"
+model = NodePath("GlyphCollisionShape/increase/Cube")
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("2_r26y0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="increase" parent="GlyphCollisionShape" unique_id=1680616100 instance=ExtResource("3_bjwi2")]
+
+[editable path="GlyphCollisionShape/increase"]

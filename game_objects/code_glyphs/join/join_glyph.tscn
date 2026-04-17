@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cit1xlx4k12h1"]
+
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="1_30dwr"]
+[ext_resource type="Script" uid="uid://brn3xch7ou0el" path="res://game_objects/code_glyphs/common/code_block.gd" id="1_wt7k8"]
+[ext_resource type="PackedScene" uid="uid://dahx5s3s8li8k" path="res://game_objects/code_glyphs/join/join.glb" id="3_x2www"]
+
+[node name="JoinGlyph" type="CharacterBody3D" unique_id=2134012176 node_paths=PackedStringArray("model")]
+script = ExtResource("1_wt7k8")
+command = "join"
+model = NodePath("GlyphCollisionShape/join/Cube")
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("1_30dwr")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="join" parent="GlyphCollisionShape" unique_id=1650546457 instance=ExtResource("3_x2www")]
+
+[editable path="GlyphCollisionShape/join"]

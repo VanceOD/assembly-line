@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cqg2qckiadaax"]
+
+[ext_resource type="Script" uid="uid://b4uwdk2l4m4s7" path="res://game_objects/code_glyphs/common/code_block_button.gd" id="1_87h46"]
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="2_484ul"]
+
+[node name="BaseCodeBlockButton" type="CharacterBody3D" unique_id=4165893]
+script = ExtResource("1_87h46")
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("2_484ul")]

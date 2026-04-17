@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ql3vbldlikqn"]
+
+[ext_resource type="PackedScene" uid="uid://chhgatt1iv2im" path="res://game_objects/code_glyphs/common/base_code_block.tscn" id="1_s7wqv"]
+[ext_resource type="PackedScene" uid="uid://dh0dkns17w6sq" path="res://game_objects/code_glyphs/continue/continue.glb" id="2_qilf6"]
+
+[node name="ContinueGlyph" unique_id=1452354934 node_paths=PackedStringArray("model") instance=ExtResource("1_s7wqv")]
+command = "continue"
+model = NodePath("GlyphCollisionShape/continue/Cube")
+
+[node name="continue" parent="GlyphCollisionShape" parent_id_path=PackedInt32Array(1576062695) index="0" unique_id=313209327 instance=ExtResource("2_qilf6")]
+
+[editable path="GlyphCollisionShape/continue"]

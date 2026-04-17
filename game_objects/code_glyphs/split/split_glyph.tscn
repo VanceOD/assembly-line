@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dhvbu0mescjgi"]
+
+[ext_resource type="Script" uid="uid://brn3xch7ou0el" path="res://game_objects/code_glyphs/common/code_block.gd" id="1_0y0lv"]
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="2_f07hj"]
+[ext_resource type="PackedScene" uid="uid://coa5rmocp8spl" path="res://game_objects/code_glyphs/split/split.glb" id="3_7rgto"]
+
+[node name="SplitGlyph" type="CharacterBody3D" unique_id=1779581679 node_paths=PackedStringArray("model")]
+script = ExtResource("1_0y0lv")
+command = "split"
+model = NodePath("GlyphCollisionShape/split/Cube")
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("2_f07hj")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="split" parent="GlyphCollisionShape" unique_id=354027228 instance=ExtResource("3_7rgto")]
+
+[editable path="GlyphCollisionShape/split"]

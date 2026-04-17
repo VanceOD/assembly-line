@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dc6mwbetuockj"]
+
+[ext_resource type="Script" uid="uid://b4uwdk2l4m4s7" path="res://game_objects/code_glyphs/common/code_block_button.gd" id="1_ydcdy"]
+[ext_resource type="PackedScene" uid="uid://ckjlhcob7o6mn" path="res://game_objects/code_glyphs/back/back.glb" id="2_3fiou"]
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="3_vlo4k"]
+
+[node name="BackButton" type="CharacterBody3D" unique_id=542882699]
+script = ExtResource("1_ydcdy")
+command = "back"
+
+[node name="back" parent="." unique_id=39611543 instance=ExtResource("2_3fiou")]
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("3_vlo4k")]

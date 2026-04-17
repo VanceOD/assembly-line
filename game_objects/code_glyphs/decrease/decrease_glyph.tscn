@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://0f36qrcblfex"]
+
+[ext_resource type="Script" uid="uid://brn3xch7ou0el" path="res://game_objects/code_glyphs/common/code_block.gd" id="1_1k8sk"]
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="1_s7mhm"]
+[ext_resource type="PackedScene" uid="uid://b1kxv55is2fmx" path="res://game_objects/code_glyphs/decrease/decrease.glb" id="3_f171q"]
+
+[node name="DecreaseGlyph" type="CharacterBody3D" unique_id=88776134 node_paths=PackedStringArray("model")]
+script = ExtResource("1_1k8sk")
+command = "decrease"
+model = NodePath("GlyphCollisionShape/decrease/Cube")
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("1_s7mhm")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="decrease" parent="GlyphCollisionShape" unique_id=701758989 instance=ExtResource("3_f171q")]
+
+[editable path="GlyphCollisionShape/decrease"]

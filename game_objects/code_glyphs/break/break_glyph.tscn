@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bq5hetu8pwgqy"]
+
+[ext_resource type="Script" uid="uid://brn3xch7ou0el" path="res://game_objects/code_glyphs/common/code_block.gd" id="1_gegqs"]
+[ext_resource type="PackedScene" uid="uid://b3jrvesnn88on" path="res://game_objects/code_glyphs/break/break.glb" id="2_fhqnd"]
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="3_fhqnd"]
+
+[node name="BreakGlyph" type="CharacterBody3D" unique_id=375004658 node_paths=PackedStringArray("model")]
+script = ExtResource("1_gegqs")
+command = "break"
+model = NodePath("GlyphCollisionShape/break/Cube")
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("3_fhqnd")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="break" parent="GlyphCollisionShape" unique_id=1823600010 instance=ExtResource("2_fhqnd")]
+
+[editable path="GlyphCollisionShape/break"]

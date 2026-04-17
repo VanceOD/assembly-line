@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cfxw3udd02s5k"]
+
+[ext_resource type="Script" uid="uid://tjsqysxlhqe2" path="res://game_objects/code_glyphs/code_box/code_box.gd" id="1_hyak1"]
+[ext_resource type="Script" uid="uid://dnfknqcsbk8sl" path="res://game_objects/code_glyphs/code_box/code_slot.gd" id="2_fj7j4"]
+[ext_resource type="PackedScene" uid="uid://dc6mwbetuockj" path="res://game_objects/code_glyphs/back/back_button.tscn" id="3_vcwyx"]
+[ext_resource type="PackedScene" uid="uid://ohgsvadphg5j" path="res://game_objects/code_glyphs/break/break_button.tscn" id="4_6stap"]
+[ext_resource type="PackedScene" uid="uid://csyou37epi56w" path="res://game_objects/code_glyphs/continue/continue_button.tscn" id="5_p4hqt"]
+[ext_resource type="PackedScene" uid="uid://dteyg4yh05py8" path="res://game_objects/code_glyphs/decrease/decrease_button.tscn" id="6_ojhw2"]
+[ext_resource type="PackedScene" uid="uid://446x4fmj8xah" path="res://game_objects/code_glyphs/increase/increase_button.tscn" id="7_57fic"]
+[ext_resource type="PackedScene" uid="uid://o6e24t7cbqwu" path="res://game_objects/code_glyphs/join/join_button.tscn" id="8_0qayb"]
+[ext_resource type="PackedScene" uid="uid://caujk2s6smpv3" path="res://game_objects/code_glyphs/loop/loop_button.tscn" id="9_vanxb"]
+[ext_resource type="PackedScene" uid="uid://17r8qwxe3rdk" path="res://game_objects/code_glyphs/pause/pause_button.tscn" id="10_20bib"]
+[ext_resource type="PackedScene" uid="uid://y5nvmfoyk3sn" path="res://game_objects/code_glyphs/split/split_button.tscn" id="11_6yw05"]
+[ext_resource type="PackedScene" uid="uid://dfa2mnb5cpin5" path="res://game_objects/code_glyphs/start/start_button.tscn" id="12_7dukm"]
+
+[node name="CodeBox" type="Node3D" unique_id=72030964 node_paths=PackedStringArray("slots", "buttons")]
+script = ExtResource("1_hyak1")
+sequence = ["back", "break", "decrease", "continue", "increase"]
+slots = [NodePath("Slot1"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4"), NodePath("Slot5")]
+buttons = [NodePath("BackButton"), NodePath("BreakButton"), NodePath("ContinueButton"), NodePath("DecreaseButton"), NodePath("IncreaseButton"), NodePath("JoinButton"), NodePath("LoopButton"), NodePath("PauseButton"), NodePath("SplitButton"), NodePath("StartButton")]
+
+[node name="Slot1" type="Marker3D" parent="." unique_id=1375289137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+script = ExtResource("2_fj7j4")
+
+[node name="Slot2" type="Marker3D" parent="." unique_id=1437374511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)
+script = ExtResource("2_fj7j4")
+
+[node name="Slot3" type="Marker3D" parent="." unique_id=2019225405]
+script = ExtResource("2_fj7j4")
+
+[node name="Slot4" type="Marker3D" parent="." unique_id=776703413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0)
+script = ExtResource("2_fj7j4")
+
+[node name="Slot5" type="Marker3D" parent="." unique_id=1429332804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+script = ExtResource("2_fj7j4")
+
+[node name="BackButton" parent="." unique_id=542882699 instance=ExtResource("3_vcwyx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8062144, 2.3841858e-07, 0.824167)
+
+[node name="BreakButton" parent="." unique_id=1949113102 instance=ExtResource("4_6stap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39556915, -2.3841858e-07, 0.8439343)
+
+[node name="ContinueButton" parent="." unique_id=4165893 instance=ExtResource("5_p4hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00092864037, 0, 0.8509159)
+
+[node name="DecreaseButton" parent="." unique_id=1793946088 instance=ExtResource("6_ojhw2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3824607, 2.3841858e-07, 0.8432739)
+
+[node name="IncreaseButton" parent="." unique_id=913975878 instance=ExtResource("7_57fic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7560162, 0, 0.8432827)
+
+[node name="JoinButton" parent="." unique_id=1826299241 instance=ExtResource("8_0qayb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80130017, 0, 1.3583426)
+
+[node name="LoopButton" parent="." unique_id=1409336812 instance=ExtResource("9_vanxb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3964624, 0, 1.3717465)
+
+[node name="PauseButton" parent="." unique_id=621541852 instance=ExtResource("10_20bib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010938637, 0, 1.3618047)
+
+[node name="SplitButton" parent="." unique_id=113507903 instance=ExtResource("11_6yw05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3992429, 0, 1.352329)
+
+[node name="StartButton" parent="." unique_id=1870097994 instance=ExtResource("12_7dukm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76693004, 2.3841858e-07, 1.358779)

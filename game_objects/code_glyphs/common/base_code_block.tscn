@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://chhgatt1iv2im"]
+
+[ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="1_6olhx"]
+[ext_resource type="Script" uid="uid://brn3xch7ou0el" path="res://game_objects/code_glyphs/common/code_block.gd" id="1_gfcr7"]
+
+[node name="BaseCodeBlock" type="CharacterBody3D" unique_id=1452354934]
+script = ExtResource("1_gfcr7")
+
+[node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("1_6olhx")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0t4qtdmqygla"]
+
+[ext_resource type="PackedScene" uid="uid://cfxw3udd02s5k" path="res://game_objects/code_glyphs/code_box/code_box.tscn" id="3_0be2s"]
+
+[node name="CodeGlyphShowcase" type="Node3D" unique_id=1646464729]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=893417655]
+transform = Transform3D(1, 0, 0, 0, 0.90920705, 0.41634426, 0, -0.41634426, 0.90920705, 0, 1.264693, 2.3917987)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1999509334]
+transform = Transform3D(0.7771459, -0.4011439, 0.4848997, 0, 0.77051324, 0.637424, -0.6293204, -0.49537146, 0.5988012, 0, 0, 0)
+
+[node name="CodeBox" parent="." unique_id=72030964 instance=ExtResource("3_0be2s")]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://xo1dygl2yet2"]
+
+[ext_resource type="Shape3D" uid="uid://b14epcs7tl0vr" path="res://game_objects/code_glyphs/common/glyph_shape.tres" id="1_6gwd1"]
+
+[node name="GlyphCollisionShape" type="CollisionShape3D" unique_id=1576062695]
+shape = ExtResource("1_6gwd1")
