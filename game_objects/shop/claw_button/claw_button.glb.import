@@ -1,0 +1,60 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dj0q6pgu3rit7"
+path="res://.godot/imported/claw_button.glb-33c2799db80a80c162300756f050d2c1.scn"
+
+[deps]
+
+source_file="res://game_objects/shop/claw_button/claw_button.glb"
+dest_files=["res://.godot/imported/claw_button.glb-33c2799db80a80c162300756f050d2c1.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"ButtonLight": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/shop/claw_button/led_on_material.tres",
+"use_external/path": "uid://lbwx68xrkb00"
+},
+"button_material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/shop/claw_button/button_material.tres",
+"use_external/path": "uid://we5awrlisgnf"
+},
+"casing_material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/shop/claw_button/casing_material.tres",
+"use_external/path": "uid://8cvthgo7tfv1"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

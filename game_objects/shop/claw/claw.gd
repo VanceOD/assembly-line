@@ -1,6 +1,9 @@
 class_name Claw
 extends CharacterBody3D
 
+signal operation_started
+signal operation_complete
+
 enum ClawState {
 	OPEN,
 	CLOSED
@@ -36,6 +39,7 @@ func return_to_ready():
 	tween.tween_callback(set_state)
 
 func grab():
+	operation_started.emit()
 	set_state(State.GRABBING)
 	if tween: tween.kill()
 	tween = get_tree().create_tween().bind_node(self).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
@@ -84,6 +88,8 @@ func resolve():
 
 func set_state(value = State.READY):
 	state = value
+	if state == State.READY:
+		operation_complete.emit()
 
 func _ready() -> void:
 	return_to_ready()

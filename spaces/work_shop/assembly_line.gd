@@ -63,7 +63,14 @@ func _on_chute_material_collected(list_of_materials: Variant) -> void:
 	collected_parts = list_of_materials
 
 func _on_hint_button_button_pressed() -> void:
+	$HintButton.set_cooldown()
 	show_hint()
 
 func _on_hints_cooldown_complete() -> void:
 	$HintButton.set_ready()
+
+func _on_claw_operation_complete() -> void:
+	$ClawButton.set_claw_idle()
+
+func _on_claw_operation_started() -> void:
+	$ClawButton.set_claw_busy()

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5vuytfo70nji"]
 
 [ext_resource type="Script" uid="uid://dgd42nruwxoff" path="res://game_objects/shop/hint_button/hint_button.gd" id="1_4oq56"]
+[ext_resource type="PackedScene" uid="uid://dj0q6pgu3rit7" path="res://game_objects/shop/claw_button/claw_button.glb" id="2_exgy2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exgy2"]
 albedo_color = Color(0, 0.3666668, 1, 1)
@@ -10,18 +11,24 @@ material = SubResource("StandardMaterial3D_exgy2")
 size = Vector3(0.4, 0.4, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ty3dp"]
-size = Vector3(0.4, 0.4, 0.4)
+size = Vector3(0.4, 0.23, 0.595)
 
-[node name="HintButton" type="Node3D" unique_id=514401011 node_paths=PackedStringArray("model")]
+[node name="HintButton" type="Node3D" unique_id=514401011 node_paths=PackedStringArray("led", "button")]
 script = ExtResource("1_4oq56")
-model = NodePath("StaticBody3D/MeshInstance3D")
+led = NodePath("StaticBody3D/claw_button/Rig/Skeleton3D/LED")
+button = NodePath("StaticBody3D/claw_button/Rig/Skeleton3D/Button_001")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=97119673]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1749086962]
+visible = false
 mesh = SubResource("BoxMesh_48enl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1315937444]
 shape = SubResource("BoxShape3D_ty3dp")
 
+[node name="claw_button" parent="StaticBody3D" unique_id=1736897376 instance=ExtResource("2_exgy2")]
+
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
+
+[editable path="StaticBody3D/claw_button"]
