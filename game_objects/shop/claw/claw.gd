@@ -1,3 +1,4 @@
+class_name Claw
 extends CharacterBody3D
 
 enum ClawState {
@@ -28,7 +29,7 @@ func return_to_ready():
 	tween = get_tree().create_tween().bind_node(self).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	var ready_position = ready_marker.global_position
 	var duration = 1.25
-	tween.tween_property(self, "position", ready_position, duration)
+	tween.tween_property(self, "global_position", ready_position, duration)
 	tween.tween_callback(close_claw)
 	var delay = 0.50
 	tween.tween_interval(delay)
@@ -41,7 +42,7 @@ func grab():
 	var target_position = target_marker.global_position
 	tween.tween_callback(open_claw)
 	var duration = 1.50
-	tween.tween_property(self, "position", target_position, duration)
+	tween.tween_property(self, "global_position", target_position, duration)
 	tween.tween_callback(close_claw)
 	var delay = 0.40
 	tween.tween_interval(delay)
@@ -57,8 +58,8 @@ func drop():
 	var drop_position = drop_marker.global_position
 	var duration_to_ready = 1.10
 	var duration_to_drop = 1.35
-	tween.tween_property(self, "position", ready_position, duration_to_ready)
-	tween.tween_property(self, "position", drop_position, duration_to_drop)
+	tween.tween_property(self, "global_position", ready_position, duration_to_ready)
+	tween.tween_property(self, "global_position", drop_position, duration_to_drop)
 	tween.tween_callback(open_claw)
 	tween.tween_callback($GrabArea.attempt_drop)
 	var delay = 0.50

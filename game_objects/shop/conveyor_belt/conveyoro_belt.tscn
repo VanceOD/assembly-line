@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://b57r4h0jond56" path="res://game_objects/shop/conveyor_belt/conveyoro_belt.gd" id="1_senke"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4ctk"]
-size = Vector3(15, 10, 5)
+size = Vector3(8.5, 10, 5)
 
 [node name="ConveyoroBelt" type="Node3D" unique_id=166357600]
 script = ExtResource("1_senke")
 
 [node name="FirstSpawn" type="Marker3D" parent="." unique_id=1545460768]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.766253, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7401404, 0, 0)
 
 [node name="ActiveArea" type="Area3D" parent="." unique_id=1926617839]
 collision_layer = 0

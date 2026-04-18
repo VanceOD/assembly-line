@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://ecq2cjxkb8dy"]
 
 [ext_resource type="Shape3D" uid="uid://tpfv8qc06vxg" path="res://game_objects/circuit_pieces/logic/circuit_piece_shape.tres" id="1_37jsk"]
+[ext_resource type="Script" uid="uid://uewhh6bjp43o" path="res://game_objects/circuit_pieces/start/start.gd" id="1_ouyyi"]
 [ext_resource type="PackedScene" uid="uid://c42xs5b1n4atv" path="res://game_objects/circuit_pieces/start/start.glb" id="2_epexk"]
 [ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="3_2fw0p"]
 [ext_resource type="Script" uid="uid://by30lowclvwyq" path="res://game_objects/circuit_pieces/start/start_block_logic.gd" id="3_epexk"]
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="3_ev8hq"]
 
 [node name="Start" type="Node3D" unique_id=369176258]
+script = ExtResource("1_ouyyi")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2011280820]
 

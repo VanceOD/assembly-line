@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cqk0fuf3aqkra"]
 
+[ext_resource type="Script" uid="uid://ddm7h5ae8chkx" path="res://game_objects/circuit_pieces/repeater/repeater.gd" id="1_eh37g"]
 [ext_resource type="PackedScene" uid="uid://blgwqeushppf5" path="res://game_objects/circuit_pieces/logic/rotatable_body.tscn" id="1_ehdag"]
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="2_upkqn"]
 [ext_resource type="PackedScene" uid="uid://jnoyip26br0p" path="res://game_objects/circuit_pieces/logic/repeater_logic.tscn" id="3_eh37g"]
 [ext_resource type="PackedScene" uid="uid://btum8hldbtf5c" path="res://game_objects/circuit_pieces/repeater/repeater.glb" id="4_upkqn"]
 
 [node name="Repeater" type="Node3D" unique_id=74035953]
+script = ExtResource("1_eh37g")
 
 [node name="RotatableBody" parent="." unique_id=984764501 instance=ExtResource("1_ehdag")]
 

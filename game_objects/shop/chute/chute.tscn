@@ -12,7 +12,7 @@ size = Vector3(1.75, 1.75, 1)
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollectionArea" type="Area3D" parent="." unique_id=158846823 groups=["collection_area"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20973146, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4957033, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_8iwdo")

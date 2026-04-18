@@ -1,3 +1,4 @@
+class_name MaterialBody
 extends CharacterBody3D
 
 @export var material_name = ""
