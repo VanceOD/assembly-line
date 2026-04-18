@@ -7,7 +7,6 @@ signal button_pressed(glyph_command)
 
 func _ready() -> void:
 	input_event.connect(_on_input_event)
-	pass
 
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
@@ -16,4 +15,3 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 	if mouse_button_event.button_index != 1: return
 	if mouse_button_event.pressed != true: return
 	button_pressed.emit(command)
-	print("Command %s" % command)

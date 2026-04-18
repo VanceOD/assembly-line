@@ -3,6 +3,11 @@ extends Node3D
 
 signal puzzle_completed
 
+func freeze_all():
+	for child in get_children():
+		if child.has_method("freeze_piece"):
+			child.freeze_piece()
+
 func _ready() -> void:
 	for child in get_children():
 		if child.has_signal("end_reached"):
@@ -11,4 +16,5 @@ func _ready() -> void:
 
 func _on_end_reached():
 	puzzle_completed.emit()
-	print("%s puzzle complete" % name)
+	freeze_all()
+	print("Finished")

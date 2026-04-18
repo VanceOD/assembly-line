@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://djpfmvg2a6yf8"]
 
+[ext_resource type="Script" uid="uid://dhr0shoywp88" path="res://game_objects/circuit_pieces/straight/straight.gd" id="1_7qajg"]
 [ext_resource type="Script" uid="uid://dblueu6iune14" path="res://game_objects/circuit_pieces/logic/rotate_on_click.gd" id="1_xiuib"]
 [ext_resource type="Shape3D" uid="uid://tpfv8qc06vxg" path="res://game_objects/circuit_pieces/logic/circuit_piece_shape.tres" id="2_7ldrc"]
 [ext_resource type="PackedScene" uid="uid://deom11n4nw8nv" path="res://game_objects/circuit_pieces/straight/straight.glb" id="3_8i4t6"]
@@ -7,6 +8,7 @@
 [ext_resource type="Script" uid="uid://2jwfphsr67f0" path="res://game_objects/circuit_pieces/logic/transmission_logic.gd" id="6_7qajg"]
 
 [node name="Straight" type="Node3D" unique_id=540918431]
+script = ExtResource("1_7qajg")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=751478582]
 script = ExtResource("1_xiuib")

@@ -21,20 +21,19 @@ func _process(_delta: float) -> void:
 	else:
 		total_power = 0
 	
+	# Charges pins that aren't receiving power.
 	for pin in pins:
 		pin.charge(total_power)
 	
+	# Changes material color when turned on and off.
 	match is_on:
 		true:
 			if not total_power > 0:
 				is_on = false
 				model.set_surface_override_material(1, null)
-				print("%s power off" % get_parent().name)
 		false:
 			if total_power > 0:
 				is_on = true
 				model.set_surface_override_material(1, CONDUCTIVE_MATERIAL_ON)
-				print("%s power is %s" % [get_parent().name, total_power])
 				if is_end:
 					end_reached.emit()
-					print("End Reached")

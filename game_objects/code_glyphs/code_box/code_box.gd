@@ -17,9 +17,33 @@ var is_valid = [false, false, false, false, false]
 @export var slots: Array[CodeSlot]
 @export var buttons: Array[CodeBlockButton]
 
+func generate_sequence(allowed_commands = ["back", "start"], allowed_buttons = ["back", "start", "loop"]):
+	sequence = []
+	for i in range(5):
+		var index = randi_range(0, allowed_commands.size() - 1)
+		var command = allowed_commands[index]
+		sequence.append(command)
+	show_buttons(allowed_buttons)
+	pass
+
 func _ready() -> void:
 	for button in buttons:
 		button.button_pressed.connect(_on_glyph_button_pressed)
+
+func show_buttons(allowed_buttons = ["back", "start", "loop"]):
+	for button in buttons:
+		if allowed_buttons.has(button.command):
+			button.visible = true
+		else:
+			button.visible = false
+
+func reset_code_box():
+	for slot in slots:
+		slot.reset_command()
+		state = State.ACCEPTING_INPUT
+		current_column = 0
+		is_valid = [false, false, false, false, false]
+		timer = 0.0
 
 func _physics_process(delta: float) -> void:
 	match state:

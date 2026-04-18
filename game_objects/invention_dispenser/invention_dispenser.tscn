@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ctbaj533cugxx"]
+
+[ext_resource type="PackedScene" uid="uid://blxmur5htaulh" path="res://game_objects/shop/chute/chute.glb" id="1_00wke"]
+[ext_resource type="Script" uid="uid://c85buqae5qub0" path="res://game_objects/invention_dispenser/invention_dispenser.gd" id="1_yhsi6"]
+
+[node name="InventionDispenser" type="Node3D" unique_id=1359027733]
+script = ExtResource("1_yhsi6")
+
+[node name="chute" parent="." unique_id=1791062563 instance=ExtResource("1_00wke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2955946, 0)

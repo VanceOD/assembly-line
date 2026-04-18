@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://fia2hi35btkb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mh5b"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.8166666, 0, 1, 1)
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_7awil"]
+material = SubResource("StandardMaterial3D_2mh5b")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8u35"]
+
+[node name="Dud" type="RigidBody3D" unique_id=927352841]
+collision_layer = 0
+collision_mask = 32
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=293981757]
+mesh = SubResource("BoxMesh_7awil")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1256607214]
+shape = SubResource("BoxShape3D_x8u35")

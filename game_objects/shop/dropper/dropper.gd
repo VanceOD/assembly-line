@@ -37,7 +37,6 @@ func fill_drop_table():
 		drop_table.append(MaterialType.GEAR)
 	for i in range(spring_weight):
 		drop_table.append(MaterialType.SPRING)
-	print(drop_table)
 
 func get_material():
 	var material: CharacterBody3D
@@ -55,7 +54,6 @@ func spawn_material():
 	if material == null: return
 	material.position = $SpawnPoint.global_position
 	get_tree().root.add_child(material)
-	print("Spawn")
 
 func _ready() -> void:
 	fill_drop_table()

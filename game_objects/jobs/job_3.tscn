@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://w4bptr1mvmvx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_amg6w"]
+size = Vector3(0.4, 0.6, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilkmj"]
+size = Vector3(0.4, 0.6, 0.1)
+
+[node name="Job3" type="Node3D" unique_id=1264184273]
+
+[node name="Model" type="MeshInstance3D" parent="." unique_id=966092904]
+mesh = SubResource("BoxMesh_amg6w")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1437617217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4360858, 0)
+text = "Job 3
+"
+font_size = 16
+outline_size = 6
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=215724019]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1612837443]
+shape = SubResource("BoxShape3D_ilkmj")
