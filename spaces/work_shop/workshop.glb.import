@@ -1,0 +1,125 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ddenn1p3xm7al"
+path="res://.godot/imported/workshop.glb-17e6ca7961bcebbb80b28f63e4672e6f.scn"
+
+[deps]
+
+source_file="res://spaces/work_shop/workshop.glb"
+dest_files=["res://.godot/imported/workshop.glb-17e6ca7961bcebbb80b28f63e4672e6f.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"CircuitBoard": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/circuit_board_material.tres",
+"use_external/path": "uid://bm052b75x37ut"
+},
+"CodeBlock": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/code_block_material.tres",
+"use_external/path": "uid://dx7gd4jnumjhb"
+},
+"CodeInputOutput": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/code_input_output_material.tres",
+"use_external/path": "uid://ckf40y23s14ts"
+},
+"CodeTable": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/code_table_material.tres",
+"use_external/path": "uid://b0l6mlujgefxv"
+},
+"ConveryorBelt": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/conveyor_belt_material.tres",
+"use_external/path": "uid://cbmmonjmlyyvk"
+},
+"Floors": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/floor_material.tres",
+"use_external/path": "uid://dan2hwdkgl1pj"
+},
+"Grass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/grass_material.tres",
+"use_external/path": "uid://55dtn27iyfqy"
+},
+"InspectionTable": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/inspection_table_material.tres",
+"use_external/path": "uid://bnrjlyws4ib2b"
+},
+"JobBoard": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/job_board_material.tres",
+"use_external/path": "uid://dv8jxi8i4ipdq"
+},
+"JobPostPost": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/job_board_post_material.tres",
+"use_external/path": "uid://cwffscp1l7nlv"
+},
+"TreeLeaves": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/tree_leaves_material.tres",
+"use_external/path": "uid://cw270xtnid3ge"
+},
+"Trunk": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/tree_trunk_material.tres",
+"use_external/path": "uid://bdoe82iito246"
+},
+"Walls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/wall_material.tres",
+"use_external/path": "uid://b0gf6hrt138r8"
+},
+"Window": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/window_material.tres",
+"use_external/path": "uid://dlger77itecpg"
+},
+"WoodLegs": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/wood_leg_material.tres",
+"use_external/path": "uid://dpeyhhdxvum3t"
+},
+"WoodTable": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://spaces/work_shop/wood_table_material.tres",
+"use_external/path": "uid://cnbv3i0bvj2qc"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

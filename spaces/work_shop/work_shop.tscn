@@ -17,96 +17,38 @@
 [ext_resource type="Script" uid="uid://6qey7qe4lbap" path="res://spaces/work_shop/hints.gd" id="11_f84q3"]
 [ext_resource type="PackedScene" uid="uid://b5vuytfo70nji" path="res://game_objects/shop/hint_button/hint_button.tscn" id="13_2on23"]
 [ext_resource type="PackedScene" uid="uid://ctbaj533cugxx" path="res://game_objects/invention_dispenser/invention_dispenser.tscn" id="17_av1k2"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd4j8"]
-diffuse_mode = 3
-specular_mode = 1
-albedo_color = Color(0.61788034, 0.5003239, 0.44863898, 1)
-roughness = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7omej"]
-diffuse_mode = 3
-specular_mode = 1
-albedo_color = Color(0.37, 0.21460001, 0.11100001, 1)
-roughness = 0.0
+[ext_resource type="PackedScene" uid="uid://ddenn1p3xm7al" path="res://spaces/work_shop/workshop.glb" id="18_vj70h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7omej"]
-size = Vector3(7.195, 3.895, 4.7)
+size = Vector3(3.8671093, 5.796011, 4.7)
 
 [sub_resource type="Environment" id="Environment_0qc13"]
 ambient_light_source = 2
 ambient_light_color = Color(0.5515456, 0.5975446, 0.58492, 1)
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vj70h"]
+size = Vector3(2.365, 0.245, 2.1186523)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2i7i"]
+size = Vector3(58.235077, 1.0422363, 13.275635)
+
 [node name="WorkShop" type="Node3D" unique_id=1330911282]
 script = ExtResource("1_p48cv")
 
-[node name="WorkShopPrototype" type="CSGCombiner3D" parent="." unique_id=1742774749]
-use_collision = true
-collision_layer = 32
-collision_mask = 0
+[node name="workshop" parent="." unique_id=847558220 instance=ExtResource("18_vj70h")]
 
-[node name="Floor" type="CSGBox3D" parent="WorkShopPrototype" unique_id=1238754792]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.840223, -1.4344616, 0.884552)
-size = Vector3(58.690533, 0.8547363, 9.92334)
-material = SubResource("StandardMaterial3D_dd4j8")
+[node name="ConveryorBeltExit" parent="workshop" index="14" unique_id=1399906799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3828998, -0.15908104, 0)
 
-[node name="CodeTable" type="CSGBox3D" parent="WorkShopPrototype" unique_id=2080900533]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0234375, -0.50880235, 0.6069641)
-size = Vector3(2.1484375, 1, 2.2139282)
+[node name="CircuitTableTop" parent="workshop" index="15" unique_id=1231172359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.663, -0.176, 0.22377896)
 
-[node name="CodeStage" type="CSGBox3D" parent="WorkShopPrototype" unique_id=2058344408]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024047852, -0.15568542, 0)
-size = Vector3(2.0549316, 0.68862915, 1)
+[node name="CircuitTableLeg_002" parent="workshop" index="18" unique_id=1768740652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5822477, -0.21227163, -2.6682293)
 
-[node name="CodingBracket" type="CSGBox3D" parent="WorkShopPrototype" unique_id=1358590573]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038330078, 0, -0.31103516)
-size = Vector3(2.057129, 1, 0.3779297)
-
-[node name="CodeInput" type="CSGBox3D" parent="WorkShopPrototype" unique_id=918883019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2416382, 0.37548828, -0.026473999)
-size = Vector3(0.37634277, 0.24902344, 0.34732056)
-
-[node name="CodeInputStand" type="CSGBox3D" parent="WorkShopPrototype" unique_id=212687661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2761078, -0.31059265, -0.024570465)
-size = Vector3(0.13632202, 1.4832458, 0.20688629)
-
-[node name="CodeExporter" type="CSGBox3D" parent="WorkShopPrototype" unique_id=617964002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3159237, 0.37548828, -0.026473999)
-size = Vector3(0.37634277, 0.24902344, 0.34732056)
-
-[node name="CodeExporterStand" type="CSGBox3D" parent="WorkShopPrototype" unique_id=1295561051]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2814541, -0.31059265, -0.024570465)
-size = Vector3(0.13632202, 1.4832458, 0.20688629)
-
-[node name="CircuitBoard" type="CSGBox3D" parent="WorkShopPrototype" unique_id=1218282866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6508484, -0.5410156, -0.19058228)
-size = Vector3(4.4244995, 0.97265625, 3.6587524)
-
-[node name="AssemblyLineStation" type="CSGBox3D" parent="WorkShopPrototype" unique_id=1309532898]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.825258, -0.53338623, 0.5600281)
-size = Vector3(9.868439, 1.104126, 2.1200562)
-
-[node name="ConveyorBeltEnd" type="CSGBox3D" parent="WorkShopPrototype" unique_id=1656083989]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.584111, 0.076049805, 0.031600952)
-size = Vector3(1.2454224, 2.2019043, 1.5291443)
-
-[node name="Wall" type="CSGBox3D" parent="WorkShopPrototype" unique_id=1954684390]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.265408, 2.222412, -4.239258)
-size = Vector3(57.70211, 7.8588867, 1.1806641)
-material = SubResource("StandardMaterial3D_7omej")
-
-[node name="ConveyorBeltStart" type="CSGBox3D" parent="WorkShopPrototype" unique_id=1671078172]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.927736, -0.22470093, 0.10522461)
-size = Vector3(2.505478, 1.7538452, 1.4379883)
-
-[node name="JobBoard" type="CSGBox3D" parent="WorkShopPrototype" unique_id=782838217]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.523657, 0.5727463, 0.65667725)
-size = Vector3(2.7314944, 3.3487396, 0.335083)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="WorkShopPrototype" unique_id=656161283]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.010635, -0.7630615, 0.5649414)
-size = Vector3(2.381836, 1.4064941, 2.1298828)
+[node name="CircuitTableLeg_003" parent="workshop" index="19" unique_id=975201127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7047644, -0.21227163, -2.6570227)
 
 [node name="CameraPivot" type="Marker3D" parent="." unique_id=660863718]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.7880108, 0.61566144, 0, -0.6156615, 0.78801066, -20.523657, 0.30851746, 0.65667725)
@@ -182,6 +124,7 @@ collision_mask = 2
 script = ExtResource("8_dd4j8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AssemblyLine/MaterialDespawn" unique_id=853026981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6639452, 0.9505055, 0)
 shape = SubResource("BoxShape3D_7omej")
 
 [node name="HintButton" parent="AssemblyLine" unique_id=514401011 instance=ExtResource("13_2on23")]
@@ -223,6 +166,19 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
+[node name="WorkshopStaticBody" type="StaticBody3D" parent="." unique_id=974119961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9847393, -0.16990739, 0)
+collision_layer = 32
+collision_mask = 0
+
+[node name="InspectionTableShape" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=1768018741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5593262)
+shape = SubResource("BoxShape3D_vj70h")
+
+[node name="FloorShape" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=1610703485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.43602, -1.3807373, 0.07849121)
+shape = SubResource("BoxShape3D_v2i7i")
+
 [connection signal="job_selected" from="JobBoard" to="." method="_on_job_board_job_selected"]
 [connection signal="finished" from="AssemblyLine" to="." method="_on_assembly_line_finished"]
 [connection signal="material_collected" from="AssemblyLine/Chute" to="AssemblyLine" method="_on_chute_material_collected"]
@@ -234,3 +190,5 @@ text = "Back"
 [connection signal="finished" from="CircuitBoard" to="." method="_on_circuit_board_finished"]
 [connection signal="finished" from="CodeBox" to="." method="_on_code_box_finished"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+
+[editable path="workshop"]
