@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://jnoyip26br0p" path="res://game_objects/circuit_pieces/logic/repeater_logic.tscn" id="3_eh37g"]
 [ext_resource type="PackedScene" uid="uid://btum8hldbtf5c" path="res://game_objects/circuit_pieces/repeater/repeater.glb" id="4_upkqn"]
 
-[node name="Repeater" type="Node3D" unique_id=74035953]
+[node name="Repeater" type="Node3D" unique_id=74035953 node_paths=PackedStringArray("logic")]
 script = ExtResource("1_eh37g")
+logic = NodePath("RotatableBody/RepeaterLogic")
 
 [node name="RotatableBody" parent="." unique_id=984764501 instance=ExtResource("1_ehdag")]
 

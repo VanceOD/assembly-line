@@ -11,13 +11,18 @@
 [ext_resource type="Script" uid="uid://dn76pnqhk1ebc" path="res://spaces/work_shop/job_board.gd" id="3_cnqle"]
 [ext_resource type="Script" uid="uid://nce43yosy2co" path="res://spaces/work_shop/assembly_line.gd" id="3_r4e6n"]
 [ext_resource type="PackedScene" uid="uid://dpgdqyopipx0r" path="res://game_objects/shop/dropper/dropper.tscn" id="5_hssc0"]
+[ext_resource type="PackedScene" uid="uid://ds7jjys5iexec" path="res://game_objects/jobs/job_2.tscn" id="6_bc8ac"]
 [ext_resource type="PackedScene" uid="uid://qb3hbtdr2ukm" path="res://game_objects/shop/claw/claw.tscn" id="6_hkr0w"]
 [ext_resource type="PackedScene" uid="uid://b5sf47fskwv0o" path="res://game_objects/shop/claw_button/claw_button.tscn" id="7_7omej"]
+[ext_resource type="PackedScene" uid="uid://w4bptr1mvmvx" path="res://game_objects/jobs/job_3.tscn" id="7_w5erp"]
+[ext_resource type="PackedScene" uid="uid://d0ie7aeo8fpwq" path="res://game_objects/jobs/job_4.tscn" id="8_ciyjp"]
 [ext_resource type="Script" uid="uid://1iwd2wr0rjk7" path="res://spaces/work_shop/material_despawn.gd" id="8_dd4j8"]
+[ext_resource type="PackedScene" uid="uid://bhlgkwrnaslmb" path="res://game_objects/jobs/job_5.tscn" id="9_jowo3"]
 [ext_resource type="Script" uid="uid://6qey7qe4lbap" path="res://spaces/work_shop/hints.gd" id="11_f84q3"]
 [ext_resource type="PackedScene" uid="uid://b5vuytfo70nji" path="res://game_objects/shop/hint_button/hint_button.tscn" id="13_2on23"]
 [ext_resource type="PackedScene" uid="uid://ctbaj533cugxx" path="res://game_objects/invention_dispenser/invention_dispenser.tscn" id="17_av1k2"]
 [ext_resource type="PackedScene" uid="uid://ddenn1p3xm7al" path="res://spaces/work_shop/workshop.glb" id="18_vj70h"]
+[ext_resource type="Script" uid="uid://duf8or145al8t" path="res://spaces/work_shop/screen_fade.gd" id="23_jowo3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7omej"]
 size = Vector3(3.8671093, 5.796011, 4.7)
@@ -38,16 +43,16 @@ script = ExtResource("1_p48cv")
 
 [node name="workshop" parent="." unique_id=847558220 instance=ExtResource("18_vj70h")]
 
-[node name="ConveryorBeltExit" parent="workshop" index="14" unique_id=1399906799]
+[node name="ConveryorBeltExit" parent="workshop" index="14" unique_id=1625930363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3828998, -0.15908104, 0)
 
-[node name="CircuitTableTop" parent="workshop" index="15" unique_id=1231172359]
+[node name="CircuitTableTop" parent="workshop" index="15" unique_id=382322645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.663, -0.176, 0.22377896)
 
-[node name="CircuitTableLeg_002" parent="workshop" index="18" unique_id=1768740652]
+[node name="CircuitTableLeg_002" parent="workshop" index="18" unique_id=1318320296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5822477, -0.21227163, -2.6682293)
 
-[node name="CircuitTableLeg_003" parent="workshop" index="19" unique_id=975201127]
+[node name="CircuitTableLeg_003" parent="workshop" index="19" unique_id=777797838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7047644, -0.21227163, -2.6570227)
 
 [node name="CameraPivot" type="Marker3D" parent="." unique_id=660863718]
@@ -74,12 +79,31 @@ transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81
 [node name="InspectionFocalPoint" type="Marker3D" parent="." unique_id=1869433468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.010635, -0.03935325, 0.5649414)
 
-[node name="JobBoard" type="Node3D" parent="." unique_id=1860738557]
+[node name="JobBoard" type="Node3D" parent="." unique_id=1860738557 node_paths=PackedStringArray("jobs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.523657, 0.5727463, 0.65667725)
 script = ExtResource("3_cnqle")
+jobs = {
+"job_1": NodePath("Job1"),
+"job_2": NodePath("Job2"),
+"job_3": NodePath("Job3"),
+"job_4": NodePath("Job4"),
+"job_5": NodePath("Job5")
+}
 
 [node name="Job1" parent="JobBoard" unique_id=37460471 instance=ExtResource("2_6p5gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73396873, 0.58292294, 0.4814744)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73396873, 0.9734752, 0.4814744)
+
+[node name="Job2" parent="JobBoard" unique_id=149770235 instance=ExtResource("6_bc8ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004890442, 0.9734752, 0.4814744)
+
+[node name="Job3" parent="JobBoard" unique_id=1264184273 instance=ExtResource("7_w5erp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6902218, 0.9734752, 0.4814744)
+
+[node name="Job4" parent="JobBoard" unique_id=170484558 instance=ExtResource("8_ciyjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73396873, -0.2503879, 0.4814744)
+
+[node name="Job5" parent="JobBoard" unique_id=1945948695 instance=ExtResource("9_jowo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010709763, -0.2503879, 0.4814744)
 
 [node name="AssemblyLine" type="Node3D" parent="." unique_id=1590532629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.00998, 0, 0)
@@ -131,7 +155,7 @@ shape = SubResource("BoxShape3D_7omej")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94729424, 0.10104871, 0.76771784)
 
 [node name="CircuitBoard" type="Node3D" parent="." unique_id=85523930]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.609415, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3643718, 0, 0)
 script = ExtResource("3_551ao")
 
 [node name="Puzzle1" parent="CircuitBoard" unique_id=1914279288 instance=ExtResource("2_ev1u8")]
@@ -178,6 +202,14 @@ shape = SubResource("BoxShape3D_vj70h")
 [node name="FloorShape" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=1610703485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.43602, -1.3807373, 0.07849121)
 shape = SubResource("BoxShape3D_v2i7i")
+
+[node name="ScreenFade" type="ColorRect" parent="." unique_id=1450022706]
+offset_left = -1156.0
+offset_top = -794.0
+offset_right = 3254.0
+offset_bottom = 2305.0
+mouse_filter = 2
+script = ExtResource("23_jowo3")
 
 [connection signal="job_selected" from="JobBoard" to="." method="_on_job_board_job_selected"]
 [connection signal="finished" from="AssemblyLine" to="." method="_on_assembly_line_finished"]

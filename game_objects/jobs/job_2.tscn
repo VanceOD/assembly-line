@@ -1,27 +1,23 @@
 [gd_scene format=3 uid="uid://ds7jjys5iexec"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amg6w"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_amg6w"]
-material = SubResource("StandardMaterial3D_amg6w")
-size = Vector3(0.4, 0.6, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_amg6w"]
-size = Vector3(0.4, 0.6, 0.1)
+[ext_resource type="Script" uid="uid://ca01yqlk4mhmh" path="res://game_objects/jobs/job.gd" id="1_0rdfr"]
+[ext_resource type="Shape3D" uid="uid://cnvtk2dhflxjl" path="res://game_objects/jobs/job_shape.tres" id="1_uil3k"]
+[ext_resource type="PackedScene" uid="uid://ckxg3u38xdlqp" path="res://game_objects/jobs/job_posting.glb" id="2_0rdfr"]
 
 [node name="Job2" type="Node3D" unique_id=149770235]
+script = ExtResource("1_0rdfr")
 
-[node name="Model" type="MeshInstance3D" parent="." unique_id=2090384326]
-mesh = SubResource("BoxMesh_amg6w")
-
-[node name="Label3D" type="Label3D" parent="." unique_id=1651465230]
+[node name="Label3D" type="Label3D" parent="." unique_id=1160518509]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4360858, 0)
 text = "Job 2"
 font_size = 16
 outline_size = 6
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1110475667]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1181422735]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1784525991]
-shape = SubResource("BoxShape3D_amg6w")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1946192573]
+shape = ExtResource("1_uil3k")
+
+[node name="job_posting" parent="." unique_id=1461097444 instance=ExtResource("2_0rdfr")]
+
+[connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

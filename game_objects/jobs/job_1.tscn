@@ -1,21 +1,11 @@
 [gd_scene format=3 uid="uid://xsrssojgtwmi"]
 
 [ext_resource type="Script" uid="uid://ca01yqlk4mhmh" path="res://game_objects/jobs/job.gd" id="1_uqlj6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqlj6"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_fa36a"]
-material = SubResource("StandardMaterial3D_uqlj6")
-size = Vector3(0.4, 0.6, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_uqlj6"]
-size = Vector3(0.4, 0.6, 0.1)
+[ext_resource type="PackedScene" uid="uid://ckxg3u38xdlqp" path="res://game_objects/jobs/job_posting.glb" id="2_7fyn1"]
+[ext_resource type="Shape3D" uid="uid://cnvtk2dhflxjl" path="res://game_objects/jobs/job_shape.tres" id="2_bkc8a"]
 
 [node name="Job1" type="Node3D" unique_id=37460471]
 script = ExtResource("1_uqlj6")
-
-[node name="Model" type="MeshInstance3D" parent="." unique_id=1214498349]
-mesh = SubResource("BoxMesh_fa36a")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=166555053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4360858, 0)
@@ -26,6 +16,8 @@ outline_size = 6
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1540752091]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=834042924]
-shape = SubResource("BoxShape3D_uqlj6")
+shape = ExtResource("2_bkc8a")
+
+[node name="job_posting" parent="." unique_id=1461097444 instance=ExtResource("2_7fyn1")]
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

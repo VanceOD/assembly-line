@@ -24,7 +24,6 @@ func generate_sequence(allowed_commands = ["back", "start"], allowed_buttons = [
 		var command = allowed_commands[index]
 		sequence.append(command)
 	show_buttons(allowed_buttons)
-	pass
 
 func _ready() -> void:
 	for button in buttons:

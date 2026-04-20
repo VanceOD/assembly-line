@@ -2,7 +2,19 @@ extends Node3D
 
 signal job_selected(job_name)
 
+@export var jobs: Dictionary[String, Node3D]
+
+func hide_jobs():
+	for job in jobs:
+		jobs[job].visible = false
+
+func unlock_job(key):
+	if jobs.has(key):
+		jobs[key].visible = true
+
 func _ready() -> void:
+	hide_jobs()
+	unlock_job("job_1")
 	for child in get_children():
 		var job = child as Job
 		if job == null: continue

@@ -19,7 +19,6 @@ func generate_schematics(part_names = ["spring", "gear"], count = 3):
 		var part_name = part_names[randi_range(0, rand_i_range)]
 		result.append(part_name)
 	required_parts = result
-	print(required_parts)
 
 func show_hint():
 	var tally_of_collected = tally_parts(collected_parts)

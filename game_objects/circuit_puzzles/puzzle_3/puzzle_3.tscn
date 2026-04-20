@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://ckkamu4vw0mlf"]
+
+[ext_resource type="Script" uid="uid://ige0grumiakh" path="res://game_objects/circuit_puzzles/common/puzzle.gd" id="1_iswo1"]
+[ext_resource type="PackedScene" uid="uid://djpfmvg2a6yf8" path="res://game_objects/circuit_pieces/straight/straight.tscn" id="2_xvhbu"]
+[ext_resource type="PackedScene" uid="uid://ecq2cjxkb8dy" path="res://game_objects/circuit_pieces/start/start.tscn" id="3_sc5hm"]
+[ext_resource type="PackedScene" uid="uid://dr53fqhc7r7ky" path="res://game_objects/circuit_pieces/turn/turn.tscn" id="4_xndb3"]
+[ext_resource type="PackedScene" uid="uid://l28qr1hakk7o" path="res://game_objects/circuit_pieces/end/end.tscn" id="5_bvtcc"]
+[ext_resource type="PackedScene" uid="uid://cqk0fuf3aqkra" path="res://game_objects/circuit_pieces/repeater/repeater.tscn" id="6_avemy"]
+[ext_resource type="PackedScene" uid="uid://btqytw2edudsm" path="res://game_objects/circuit_pieces/blank/blank.tscn" id="7_bvtcc"]
+
+[node name="Puzzle3" type="Node3D" unique_id=195463182]
+script = ExtResource("1_iswo1")
+
+[node name="Straight" parent="." unique_id=540918431 instance=ExtResource("2_xvhbu")]
+
+[node name="Straight2" parent="." unique_id=260774701 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5433589, -2.3841858e-07, 0.0035857558)
+
+[node name="Straight3" parent="." unique_id=897367537 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0788587, 2.3841858e-07, -0.0017568171)
+
+[node name="Start" parent="." unique_id=369176258 instance=ExtResource("3_sc5hm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.19067, 0, 0.0004158914)
+
+[node name="Turn" parent="." unique_id=1981407314 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.626144, 0, -0.007181406)
+
+[node name="Turn2" parent="." unique_id=2124888642 instance=ExtResource("4_xndb3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.6187301, 0, 0.5168967)
+
+[node name="Turn3" parent="." unique_id=1005443285 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0705696, 0, 0.52026546)
+
+[node name="Turn4" parent="." unique_id=33283760 instance=ExtResource("4_xndb3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.0672032, 0, 1.0445166)
+
+[node name="Straight4" parent="." unique_id=649809395 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5248781, 0, 1.0364944)
+
+[node name="Turn5" parent="." unique_id=666252218 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001305995, 0, 1.0347427)
+
+[node name="End" parent="." unique_id=782493646 instance=ExtResource("5_bvtcc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.004732352, 0, 0.525146)
+
+[node name="Repeater" parent="." unique_id=74035953 instance=ExtResource("6_avemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0853463, 0, -0.5270126)
+
+[node name="Turn6" parent="." unique_id=1632327983 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0952126, 0, -1.0645366)
+
+[node name="Turn7" parent="." unique_id=755480586 instance=ExtResource("4_xndb3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.624855, 0, -1.0653422)
+
+[node name="Turn8" parent="." unique_id=446421212 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.623968, 0, -1.5974462)
+
+[node name="Repeater2" parent="." unique_id=489194717 instance=ExtResource("6_avemy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.0958226, 0, -1.582674)
+
+[node name="Straight5" parent="." unique_id=780505560 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55539453, 0, -1.5675588)
+
+[node name="Turn9" parent="." unique_id=654403429 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5516207, 0, -1.0360788)
+
+[node name="Turn10" parent="." unique_id=2075090154 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5423415, 0, -0.50418866)
+
+[node name="Turn11" parent="." unique_id=36192923 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027349291, 2.3841858e-07, -1.5566725)
+
+[node name="Turn12" parent="." unique_id=703676322 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01625431, 2.3841858e-07, -0.51818514)
+
+[node name="Turn13" parent="." unique_id=59677470 instance=ExtResource("4_xndb3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.021247678, -2.3841858e-07, -1.0464208)
+
+[node name="Turn14" parent="." unique_id=916102061 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.498364, 0, -1.04193)
+
+[node name="Blank" parent="." unique_id=951675767 instance=ExtResource("7_bvtcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4960039, 0, -1.5575925)
+
+[node name="Repeater3" parent="." unique_id=397579141 instance=ExtResource("6_avemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50431883, 2.3841858e-07, -0.51819026)
+power_delta = 8
+
+[node name="Turn15" parent="." unique_id=1934018180 instance=ExtResource("4_xndb3")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.51431024, 0, -0.0020458698)
+
+[node name="Turn16" parent="." unique_id=1590370331 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0400779, 0, 0.007961631)
+
+[node name="Straight6" parent="." unique_id=627096305 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0351334, -2.3841858e-07, 0.5296685)
+
+[node name="Turn17" parent="." unique_id=2019486607 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0297945, 0, 1.0425766)
+
+[node name="Straight7" parent="." unique_id=1720584962 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5173763, 0, 1.0326289)
+
+[node name="Straight8" parent="." unique_id=1228921576 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523998, 0, 0.5132703)
+
+[node name="Repeater4" parent="." unique_id=91875200 instance=ExtResource("6_avemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5185696, -2.3841858e-07, 0.51522064)
+
+[node name="Straight10" parent="." unique_id=1910270313 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6230733, 0, 1.0478315)
+
+[node name="Turn18" parent="." unique_id=932817515 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6393692, 0, -0.5345819)
+
+[node name="Turn19" parent="." unique_id=1649851938 instance=ExtResource("4_xndb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0128623, 0, -1.5506424)
+
+[node name="Straight9" parent="." unique_id=727593642 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0053536, 0, -1.0243492)
+
+[node name="Straight11" parent="." unique_id=527358612 instance=ExtResource("2_xvhbu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.0175546, 0, -0.5067843)

@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://cntiwl1fprtai"]
 
+[ext_resource type="Script" uid="uid://ddm7h5ae8chkx" path="res://game_objects/circuit_pieces/repeater/repeater.gd" id="1_3m4oi"]
 [ext_resource type="PackedScene" uid="uid://cf0otbd38r4rx" path="res://game_objects/circuit_pieces/logic/solid_body.tscn" id="1_u1vkm"]
 [ext_resource type="PackedScene" uid="uid://btum8hldbtf5c" path="res://game_objects/circuit_pieces/repeater/repeater.glb" id="2_3m4oi"]
 [ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="3_duhro"]
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="4_f2fpb"]
 [ext_resource type="PackedScene" uid="uid://jnoyip26br0p" path="res://game_objects/circuit_pieces/logic/repeater_logic.tscn" id="5_qub41"]
 
-[node name="RepeaterSolid" type="Node3D" unique_id=809114633]
+[node name="RepeaterSolid" type="Node3D" unique_id=809114633 node_paths=PackedStringArray("logic")]
+script = ExtResource("1_3m4oi")
+logic = NodePath("RepeaterLogic")
 
 [node name="SolidBody" parent="." unique_id=543779264 instance=ExtResource("1_u1vkm")]
 

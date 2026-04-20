@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bhlgkwrnaslmb"]
+
+[ext_resource type="Shape3D" uid="uid://cnvtk2dhflxjl" path="res://game_objects/jobs/job_shape.tres" id="1_2itae"]
+[ext_resource type="Script" uid="uid://ca01yqlk4mhmh" path="res://game_objects/jobs/job.gd" id="1_t3gml"]
+[ext_resource type="PackedScene" uid="uid://ckxg3u38xdlqp" path="res://game_objects/jobs/job_posting.glb" id="2_t3gml"]
+
+[node name="Job5" type="Node3D" unique_id=1945948695]
+script = ExtResource("1_t3gml")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=291247731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4360858, 0)
+text = "Job 5"
+font_size = 16
+outline_size = 6
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1445091760]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1304232915]
+shape = ExtResource("1_2itae")
+
+[node name="job_posting" parent="." unique_id=1461097444 instance=ExtResource("2_t3gml")]
+
+[connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
