@@ -4,10 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="2_2yo32"]
 [ext_resource type="PackedScene" uid="uid://4l4x10w6vlgg" path="res://game_objects/code_glyphs/loop/loop.glb" id="3_jlqq8"]
 
-[node name="LoopButton" type="CharacterBody3D" unique_id=1409336812]
+[node name="LoopButton" type="CharacterBody3D" unique_id=1409336812 node_paths=PackedStringArray("model")]
 script = ExtResource("1_d7qbm")
 command = "loop"
+model = NodePath("GlyphCollisionShape/loop/Cube")
 
 [node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("2_2yo32")]
 
 [node name="loop" parent="GlyphCollisionShape" unique_id=2078680925 instance=ExtResource("3_jlqq8")]
+
+[editable path="GlyphCollisionShape/loop"]

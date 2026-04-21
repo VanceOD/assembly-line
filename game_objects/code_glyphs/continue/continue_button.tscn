@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cqg2qckiadaax" path="res://game_objects/code_glyphs/common/base_code_block_button.tscn" id="1_b4mjk"]
 [ext_resource type="PackedScene" uid="uid://dh0dkns17w6sq" path="res://game_objects/code_glyphs/continue/continue.glb" id="2_xwon4"]
 
-[node name="ContinueButton" unique_id=4165893 instance=ExtResource("1_b4mjk")]
+[node name="ContinueButton" unique_id=4165893 node_paths=PackedStringArray("model") instance=ExtResource("1_b4mjk")]
 command = "continue"
+model = NodePath("GlyphCollisionShape/continue/Cube")
 
 [node name="continue" parent="GlyphCollisionShape" parent_id_path=PackedInt32Array(1576062695) index="0" unique_id=1514008835 instance=ExtResource("2_xwon4")]
+
+[editable path="GlyphCollisionShape/continue"]

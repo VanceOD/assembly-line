@@ -40,31 +40,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.42723393, 0)
 script = ExtResource("2_fj7j4")
 
 [node name="BackButton" parent="." unique_id=542882699 instance=ExtResource("3_vcwyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8062144, 2.3841858e-07, 0.824167)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8062144, 0.065181434, 0.824167)
 
 [node name="BreakButton" parent="." unique_id=1949113102 instance=ExtResource("4_6stap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39556915, -2.3841858e-07, 0.8439343)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39556915, 0.06518096, 0.8439343)
 
 [node name="ContinueButton" parent="." unique_id=4165893 instance=ExtResource("5_p4hqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00092864037, 0, 0.8509159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00092864037, 0.065181196, 0.8509159)
 
 [node name="DecreaseButton" parent="." unique_id=1793946088 instance=ExtResource("6_ojhw2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3824607, 2.3841858e-07, 0.8432739)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3824607, 0.065181434, 0.8432739)
 
 [node name="IncreaseButton" parent="." unique_id=913975878 instance=ExtResource("7_57fic")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7560162, 0, 0.8432827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7560162, 0.065181196, 0.8432827)
 
 [node name="JoinButton" parent="." unique_id=1826299241 instance=ExtResource("8_0qayb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80130017, 0, 1.3583426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80130017, 0.065181196, 1.3583426)
 
 [node name="LoopButton" parent="." unique_id=1409336812 instance=ExtResource("9_vanxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3964624, 0, 1.3717465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3964624, 0.065181196, 1.3717465)
 
 [node name="PauseButton" parent="." unique_id=621541852 instance=ExtResource("10_20bib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010938637, 0, 1.3618047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010938637, 0.065181196, 1.3618047)
 
 [node name="SplitButton" parent="." unique_id=113507903 instance=ExtResource("11_6yw05")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3992429, 0, 1.352329)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3992429, 0.065181196, 1.352329)
 
 [node name="StartButton" parent="." unique_id=1870097994 instance=ExtResource("12_7dukm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76693004, 2.3841858e-07, 1.358779)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76693004, 0.065181434, 1.358779)

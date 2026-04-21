@@ -52,13 +52,13 @@ func _on_job_board_job_selected(job_name: Variant) -> void:
 			$AssemblyLine.generate_schematics(["gear", "chip"], 2)
 			$CodeBox.reset_code_box()
 			$CodeBox.generate_sequence(["back", "loop"], ["back", "loop", "start"])
-			machine_reward = "dud"
+			machine_reward = "pin_wheel"
 			job_to_unlock = "job_2"
 		"Job 2":
 			$AssemblyLine.generate_schematics(["gear", "spring", "battery"], 3)
 			$CodeBox.reset_code_box()
 			$CodeBox.generate_sequence(["break", "continue", "start"], ["break", "continue", "start"])
-			machine_reward = "dud"
+			machine_reward = "ball"
 			job_to_unlock = "job_3"
 		"Job 3":
 			$AssemblyLine.generate_schematics(["spring", "chip", "battery"], 5)

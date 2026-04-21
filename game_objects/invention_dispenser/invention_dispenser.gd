@@ -2,6 +2,9 @@ class_name InventionDispenser
 extends Node3D
 
 const DUD = preload("uid://fia2hi35btkb")
+const PIN_WHEEL = preload("uid://yaqr3bbqvsqv")
+const BALL = preload("uid://btaddkkqhuckx")
+
 
 @export var dispense_point: Marker3D
 @export var retract_point: Marker3D
@@ -18,6 +21,9 @@ func spawn_invention(invention_name = "dud"):
 	var invention: Node3D
 	match invention_name:
 		"dud": invention = DUD.instantiate() as Node3D
+		"pin_wheel": invention = PIN_WHEEL.instantiate() as Node3D
+		"ball": invention = BALL.instantiate() as Node3D
+		_: invention = DUD.instantiate() as Node3D
 	invention.top_level = true
 	invention.position = global_position
 	add_child(invention)

@@ -38,6 +38,12 @@ size = Vector3(2.365, 0.245, 2.1186523)
 [sub_resource type="BoxShape3D" id="BoxShape3D_v2i7i"]
 size = Vector3(58.235077, 1.0422363, 13.275635)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jowo3"]
+size = Vector3(0.3022461, 2.7731934, 2.48172)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51gcg"]
+size = Vector3(2.94812, 1.1547852, 2.5136719)
+
 [node name="WorkShop" type="Node3D" unique_id=1330911282]
 script = ExtResource("1_p48cv")
 
@@ -194,6 +200,7 @@ text = "Back"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9847393, -0.16990739, 0)
 collision_layer = 32
 collision_mask = 0
+input_ray_pickable = false
 
 [node name="InspectionTableShape" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=1768018741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5593262)
@@ -203,12 +210,33 @@ shape = SubResource("BoxShape3D_vj70h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.43602, -1.3807373, 0.07849121)
 shape = SubResource("BoxShape3D_v2i7i")
 
+[node name="InspectionTableInvisibleWall1" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=1971478936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3244629, 0.53674316, 0.5862732)
+shape = SubResource("BoxShape3D_jowo3")
+
+[node name="InspectionTableInvisibleWall2" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=152225238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3526874, 0.53674316, 0.5862732)
+shape = SubResource("BoxShape3D_jowo3")
+
+[node name="InspectionTableInvisibleWall3" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=1595188051]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.019501686, 0.53674316, 1.7842666)
+shape = SubResource("BoxShape3D_jowo3")
+
+[node name="InspectionTableInvisibleWall4" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=214132817]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.019501686, 0.53674316, -0.63022244)
+shape = SubResource("BoxShape3D_jowo3")
+
+[node name="InspectionTableInvisibleCeiling" type="CollisionShape3D" parent="WorkshopStaticBody" unique_id=825296823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1035156e-05, 2.5134277, 0.6542969)
+shape = SubResource("BoxShape3D_51gcg")
+
 [node name="ScreenFade" type="ColorRect" parent="." unique_id=1450022706]
 offset_left = -1156.0
 offset_top = -794.0
 offset_right = 3254.0
 offset_bottom = 2305.0
 mouse_filter = 2
+color = Color(0, 0, 0, 1)
 script = ExtResource("23_jowo3")
 
 [connection signal="job_selected" from="JobBoard" to="." method="_on_job_board_job_selected"]

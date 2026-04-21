@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bvhmms5ft1ahw"]
+
+[ext_resource type="PackedScene" uid="uid://btaddkkqhuckx" path="res://game_objects/invention/ball/ball.tscn" id="1_xus87"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_53ko8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xus87"]
+sky_material = SubResource("ProceduralSkyMaterial_53ko8")
+
+[sub_resource type="Environment" id="Environment_w84ih"]
+background_mode = 2
+sky = SubResource("Sky_xus87")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53ko8"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.5125632, 0.2733837, 0.06375227, 1)
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_xus87"]
+material = SubResource("StandardMaterial3D_53ko8")
+size = Vector3(2, 0.2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53ko8"]
+size = Vector3(2, 0.2, 2)
+
+[node name="ToyShowcase" type="Node3D" unique_id=1221622568]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=307122286]
+environment = SubResource("Environment_w84ih")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1116495886]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1269564231]
+mesh = SubResource("BoxMesh_xus87")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=2055249328]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=942265207]
+shape = SubResource("BoxShape3D_53ko8")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=297532008]
+transform = Transform3D(1, 0, 0, 0, 0.68835455, 0.72537434, 0, -0.72537434, 0.68835455, 0, 0.35507226, 0.38156587)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=394583781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.53)
+
+[node name="Ball" parent="." unique_id=1739060273 instance=ExtResource("1_xus87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06612468, 0.8658166, 0.12353778)

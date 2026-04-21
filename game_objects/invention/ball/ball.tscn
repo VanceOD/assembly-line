@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://btaddkkqhuckx"]
+
+[ext_resource type="PackedScene" uid="uid://p5dl01sn60pv" path="res://game_objects/invention/ball/ball.glb" id="1_o5a4i"]
+[ext_resource type="Script" uid="uid://cnjchymfjs8en" path="res://game_objects/invention/ball/ball.gd" id="1_wrrmx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o5a4i"]
+bounce = 0.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o5a4i"]
+radius = 0.17800638
+
+[node name="Ball" type="RigidBody3D" unique_id=1739060273]
+collision_layer = 64
+collision_mask = 32
+physics_material_override = SubResource("PhysicsMaterial_o5a4i")
+script = ExtResource("1_wrrmx")
+
+[node name="ball" parent="." unique_id=1589377174 instance=ExtResource("1_o5a4i")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2086994100]
+shape = SubResource("SphereShape3D_o5a4i")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

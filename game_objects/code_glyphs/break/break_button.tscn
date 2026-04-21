@@ -4,10 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://b3jrvesnn88on" path="res://game_objects/code_glyphs/break/break.glb" id="2_wbeqa"]
 [ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="3_u2x48"]
 
-[node name="BreakButton" type="CharacterBody3D" unique_id=1949113102]
+[node name="BreakButton" type="CharacterBody3D" unique_id=1949113102 node_paths=PackedStringArray("model")]
 script = ExtResource("1_h6rwf")
 command = "break"
+model = NodePath("break/Cube")
 
 [node name="break" parent="." unique_id=775311964 instance=ExtResource("2_wbeqa")]
 
 [node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("3_u2x48")]
+
+[editable path="break"]

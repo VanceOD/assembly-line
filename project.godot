@@ -37,6 +37,7 @@ pin=""
 3d_physics/layer_4="circuit_piece"
 3d_physics/layer_5="pin"
 3d_physics/layer_6="work_shop"
+3d_physics/layer_7="toy"
 
 [physics]
 
@@ -45,6 +46,4 @@ pin=""
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true

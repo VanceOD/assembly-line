@@ -4,10 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://ckjlhcob7o6mn" path="res://game_objects/code_glyphs/back/back.glb" id="2_3fiou"]
 [ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="3_vlo4k"]
 
-[node name="BackButton" type="CharacterBody3D" unique_id=542882699]
+[node name="BackButton" type="CharacterBody3D" unique_id=542882699 node_paths=PackedStringArray("model")]
 script = ExtResource("1_ydcdy")
 command = "back"
+model = NodePath("back/Cube")
 
 [node name="back" parent="." unique_id=39611543 instance=ExtResource("2_3fiou")]
 
 [node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("3_vlo4k")]
+
+[editable path="back"]
