@@ -11,7 +11,7 @@ radius = 0.17800638
 
 [node name="Ball" type="RigidBody3D" unique_id=1739060273]
 collision_layer = 64
-collision_mask = 32
+collision_mask = 288
 physics_material_override = SubResource("PhysicsMaterial_o5a4i")
 script = ExtResource("1_wrrmx")
 

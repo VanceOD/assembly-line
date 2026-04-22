@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://8f2orqes1672"]
+
+[ext_resource type="Script" uid="uid://jo5siyvnbvl8" path="res://game_objects/invention/car/car_smoke.gd" id="1_32oej"]
+[ext_resource type="PackedScene" uid="uid://vub4vnahuqtq" path="res://game_objects/invention/car/car_smoke.glb" id="1_ti86r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_32oej"]
+radius = 0.05075581
+
+[node name="CarSmoke" type="RigidBody3D" unique_id=341092963]
+collision_layer = 64
+collision_mask = 0
+gravity_scale = -0.05
+script = ExtResource("1_32oej")
+
+[node name="car_smoke" parent="." unique_id=1392162094 instance=ExtResource("1_ti86r")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=549958669]
+shape = SubResource("SphereShape3D_32oej")

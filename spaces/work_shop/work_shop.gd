@@ -64,19 +64,19 @@ func _on_job_board_job_selected(job_name: Variant) -> void:
 			$AssemblyLine.generate_schematics(["spring", "chip", "battery"], 5)
 			$CodeBox.reset_code_box()
 			$CodeBox.generate_sequence(["back", "decrease", "join", "split"], ["back", "decrease", "join", "split", "break"])
-			machine_reward = "dud"
+			machine_reward = "volcano"
 			job_to_unlock = "job_4"
 		"Job 4":
 			$AssemblyLine.generate_schematics(["chip", "bolt", "battery"], 7)
 			$CodeBox.reset_code_box()
 			$CodeBox.generate_sequence(["back", "break", "continue", "decrease", "increase", "join"], ["back", "break", "continue", "decrease", "increase", "join"])
-			machine_reward = "dud"
+			machine_reward = "ufo"
 			job_to_unlock = "job_5"
 		"Job 5":
 			$AssemblyLine.generate_schematics(["gear", "chip", "bolt", "battery", "spring"], 10)
 			$CodeBox.reset_code_box()
 			$CodeBox.generate_sequence(["back", "break", "continue", "decrease", "increase", "join", "loop", "pause", "split", "start"], ["back", "break", "continue", "decrease", "increase", "join", "loop", "pause", "split", "start"])
-			machine_reward = "dud"
+			machine_reward = "car"
 			job_to_unlock = "job_5"
 	$CircuitBoard.spawn_puzzle(job_name)
 	request_state(State.ASSEMBLY_LINE)

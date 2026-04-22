@@ -37,6 +37,29 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"back_button_material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/invention/car/back_button_material.tres",
+"use_external/path": "uid://cmo3e466vp203"
+},
+"forward_button_material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/invention/car/forward_button_material.tres",
+"use_external/path": "uid://cr5fh2delm8lj"
+},
+"remote_antenna": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/invention/car/remote_antenna_material.tres",
+"use_external/path": "uid://cenbfll2cs2yb"
+},
+"remote_body": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/invention/car/remote_body_material.tres",
+"use_external/path": "uid://bq8l4xfw6cbxs"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

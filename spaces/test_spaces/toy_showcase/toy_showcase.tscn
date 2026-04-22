@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvhmms5ft1ahw"]
 
-[ext_resource type="PackedScene" uid="uid://btaddkkqhuckx" path="res://game_objects/invention/ball/ball.tscn" id="1_xus87"]
+[ext_resource type="PackedScene" uid="uid://b1gxkaqjqanod" path="res://game_objects/invention/car/remote_control_car_system.tscn" id="1_xus87"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_53ko8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -51,5 +51,5 @@ transform = Transform3D(1, 0, 0, 0, 0.68835455, 0.72537434, 0, -0.72537434, 0.68
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=394583781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.53)
 
-[node name="Ball" parent="." unique_id=1739060273 instance=ExtResource("1_xus87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06612468, 0.8658166, 0.12353778)
+[node name="RemoteControlCarSystem" parent="." unique_id=724839844 instance=ExtResource("1_xus87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0201385, 0)

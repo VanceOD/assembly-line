@@ -38,10 +38,14 @@ pin=""
 3d_physics/layer_5="pin"
 3d_physics/layer_6="work_shop"
 3d_physics/layer_7="toy"
+3d_physics/layer_8="volcano"
+3d_physics/layer_9="InvisibleWall"
 
 [physics]
 
+common/physics_ticks_per_second=30
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b2kr22poq1n7y"]
+
+[ext_resource type="Script" uid="uid://df64hwq8otbv1" path="res://game_objects/invention/volcano/volcano_smoke.gd" id="1_cp0fu"]
+[ext_resource type="PackedScene" uid="uid://dwx28fdwtomuh" path="res://game_objects/invention/volcano/volcano_smoke_1.glb" id="1_uaupt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cp0fu"]
+radius = 0.08001657
+
+[node name="VolcanoSmoke" type="RigidBody3D" unique_id=253740786]
+collision_layer = 64
+collision_mask = 0
+input_ray_pickable = false
+gravity_scale = -0.2
+script = ExtResource("1_cp0fu")
+
+[node name="volcano_smoke_1" parent="." unique_id=635673626 instance=ExtResource("1_uaupt")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=325476908]
+shape = SubResource("SphereShape3D_cp0fu")

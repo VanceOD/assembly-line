@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://m2x4mp4hwk7q"]
+
+[ext_resource type="Script" uid="uid://bokqds0vu4r8y" path="res://game_objects/invention/volcano/volcano_rock.gd" id="1_4rj1g"]
+[ext_resource type="PackedScene" uid="uid://cmmembbq2ke6r" path="res://game_objects/invention/volcano/volcano_rock.glb" id="1_orf0o"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4rj1g"]
+rough = true
+bounce = 0.35
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4rj1g"]
+radius = 0.061978105
+
+[node name="VolcanoRock" type="RigidBody3D" unique_id=2120156343]
+collision_layer = 64
+collision_mask = 160
+physics_material_override = SubResource("PhysicsMaterial_4rj1g")
+script = ExtResource("1_4rj1g")
+
+[node name="volcano_rock" parent="." unique_id=559084328 instance=ExtResource("1_orf0o")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=24097154]
+shape = SubResource("SphereShape3D_4rj1g")

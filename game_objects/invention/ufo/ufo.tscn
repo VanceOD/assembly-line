@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://yxgkg4ylijgw"]
+
+[ext_resource type="Script" uid="uid://bvyli6rv5fkni" path="res://game_objects/invention/ufo/ufo.gd" id="1_qpcy5"]
+[ext_resource type="PackedScene" uid="uid://cxto2s3gf5xee" path="res://game_objects/invention/ufo/ufo.glb" id="1_rni7c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpcy5"]
+size = Vector3(0.72, 0.338, 0.72)
+
+[node name="UFO" type="CharacterBody3D" unique_id=1356930128 node_paths=PackedStringArray("spinning_part")]
+collision_layer = 64
+collision_mask = 288
+script = ExtResource("1_qpcy5")
+spinning_part = NodePath("ufo/Cube_001")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=94186779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0044555664, 0)
+shape = SubResource("BoxShape3D_qpcy5")
+
+[node name="ufo" parent="." unique_id=1206361642 instance=ExtResource("1_rni7c")]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+
+[editable path="ufo"]

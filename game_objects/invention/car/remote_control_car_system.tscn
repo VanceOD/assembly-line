@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b1gxkaqjqanod"]
+
+[ext_resource type="Script" uid="uid://dpdp2uek2j7ik" path="res://game_objects/invention/car/remote_control_car_system.gd" id="1_6doia"]
+[ext_resource type="PackedScene" uid="uid://boqmcyjauvtis" path="res://game_objects/invention/car/car.tscn" id="1_vlklr"]
+[ext_resource type="PackedScene" uid="uid://b1ehvonia0mdn" path="res://game_objects/invention/car/remote_controller.tscn" id="2_6doia"]
+
+[node name="RemoteControlCarSystem" type="Node3D" unique_id=724839844]
+script = ExtResource("1_6doia")
+
+[node name="Car" parent="." unique_id=1342727220 instance=ExtResource("1_vlklr")]
+
+[node name="RemoteController" parent="." unique_id=1770097068 instance=ExtResource("2_6doia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80324984, 0, 0.5574136)
+
+[connection signal="backwards_pressed" from="RemoteController" to="." method="_on_remote_controller_backwards_pressed"]
+[connection signal="forward_pressed" from="RemoteController" to="." method="_on_remote_controller_forward_pressed"]

@@ -37,6 +37,24 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"glass_color": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/invention/ufo/glass_material.tres",
+"use_external/path": "uid://c241p5o7b7v3l"
+},
+"light_color": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/invention/ufo/light_material.tres",
+"use_external/path": "uid://b3ggmlonwj280"
+},
+"ship_color": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://game_objects/invention/ufo/ship_material.tres",
+"use_external/path": "uid://dcr3cmjomok6y"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

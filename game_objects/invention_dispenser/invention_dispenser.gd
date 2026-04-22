@@ -4,7 +4,9 @@ extends Node3D
 const DUD = preload("uid://fia2hi35btkb")
 const PIN_WHEEL = preload("uid://yaqr3bbqvsqv")
 const BALL = preload("uid://btaddkkqhuckx")
-
+const VOLCANO = preload("uid://du20cufd253nc")
+const UFO = preload("uid://yxgkg4ylijgw")
+const REMOTE_CONTROL_CAR_SYSTEM = preload("uid://b1gxkaqjqanod")
 
 @export var dispense_point: Marker3D
 @export var retract_point: Marker3D
@@ -23,6 +25,9 @@ func spawn_invention(invention_name = "dud"):
 		"dud": invention = DUD.instantiate() as Node3D
 		"pin_wheel": invention = PIN_WHEEL.instantiate() as Node3D
 		"ball": invention = BALL.instantiate() as Node3D
+		"volcano": invention = VOLCANO.instantiate() as Node3D
+		"ufo": invention = UFO.instantiate() as Node3D
+		"car": invention = REMOTE_CONTROL_CAR_SYSTEM.instantiate() as Node3D
 		_: invention = DUD.instantiate() as Node3D
 	invention.top_level = true
 	invention.position = global_position

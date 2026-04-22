@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b1ehvonia0mdn"]
+
+[ext_resource type="Script" uid="uid://c0tvwj2bmpcpt" path="res://game_objects/invention/car/remote_controller.gd" id="1_3txhm"]
+[ext_resource type="PackedScene" uid="uid://cp5iq57cvnxjp" path="res://game_objects/invention/car/remote_controller.glb" id="1_ru7g3"]
+[ext_resource type="Shape3D" uid="uid://1ww1hulmso0c" path="res://game_objects/invention/car/remote_control_button_shape.tres" id="2_w0df2"]
+[ext_resource type="Script" uid="uid://ofnou58ujxgq" path="res://game_objects/invention/car/remote_button_model.gd" id="3_4xsnf"]
+[ext_resource type="Script" uid="uid://culbf5xxllsoa" path="res://game_objects/invention/car/remote_controller_button.gd" id="3_nnr56"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0df2"]
+size = Vector3(0.21, 0.086, 0.21)
+
+[node name="RemoteController" type="CharacterBody3D" unique_id=1770097068]
+collision_layer = 320
+collision_mask = 32
+input_ray_pickable = false
+script = ExtResource("1_3txhm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=146502723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00015258789, 0.0028076172, -0.029663086)
+shape = SubResource("BoxShape3D_w0df2")
+
+[node name="remote_controller" parent="." unique_id=685918630 instance=ExtResource("1_ru7g3")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="ForwardButton" parent="remote_controller" index="2" unique_id=1529985806]
+script = ExtResource("3_4xsnf")
+
+[node name="BackButton" parent="remote_controller" index="3" unique_id=80999233]
+script = ExtResource("3_4xsnf")
+
+[node name="ForwardArea" type="Area3D" parent="." unique_id=1990260847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049766853, 0.04265942, -0.009729972)
+script = ExtResource("3_nnr56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ForwardArea" unique_id=38866212]
+shape = ExtResource("2_w0df2")
+
+[node name="BackwardArea" type="Area3D" parent="." unique_id=1708108542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044323877, 0.047950827, 0)
+script = ExtResource("3_nnr56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackwardArea" unique_id=693901090]
+shape = ExtResource("2_w0df2")
+
+[connection signal="input_event" from="ForwardArea" to="ForwardArea" method="_on_input_event"]
+[connection signal="remote_button_pressed" from="ForwardArea" to="." method="_on_forward_area_remote_button_pressed"]
+[connection signal="input_event" from="BackwardArea" to="BackwardArea" method="_on_input_event"]
+[connection signal="remote_button_pressed" from="BackwardArea" to="." method="_on_backward_area_remote_button_pressed"]
+
+[editable path="remote_controller"]

@@ -8,5 +8,4 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 	if mouse_button == null: return
 	if mouse_button.button_index != 1: return
 	if mouse_button.pressed != true: return
-	print("It clicked")
 	spin_pin()
