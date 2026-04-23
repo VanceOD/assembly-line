@@ -2,9 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://blxmur5htaulh" path="res://game_objects/shop/chute/chute.glb" id="1_00wke"]
 [ext_resource type="Script" uid="uid://c85buqae5qub0" path="res://game_objects/invention_dispenser/invention_dispenser.gd" id="1_yhsi6"]
+[ext_resource type="AudioStream" uid="uid://bft84ffgfuc83" path="res://game_objects/shop/claw/hydraulic_down.wav" id="3_n8a0f"]
+[ext_resource type="AudioStream" uid="uid://lux7bqgaw64f" path="res://game_objects/shop/dropper/air_burst.wav" id="4_tjgom"]
 
-[node name="InventionDispenser" type="Node3D" unique_id=1359027733]
+[node name="InventionDispenser" type="Node3D" unique_id=1359027733 node_paths=PackedStringArray("hydraulic_sound", "dispense_sound")]
 script = ExtResource("1_yhsi6")
+hydraulic_sound = NodePath("HydraulicSound")
+dispense_sound = NodePath("DispenseSound")
 
 [node name="chute" parent="." unique_id=1791062563 instance=ExtResource("1_00wke")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2955946, 0)
+
+[node name="HydraulicSound" type="AudioStreamPlayer3D" parent="." unique_id=334834407]
+stream = ExtResource("3_n8a0f")
+
+[node name="DispenseSound" type="AudioStreamPlayer3D" parent="." unique_id=1045726011]
+stream = ExtResource("4_tjgom")
+unit_size = 5.0

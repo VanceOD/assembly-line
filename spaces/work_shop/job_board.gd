@@ -15,7 +15,6 @@ func unlock_job(key):
 func _ready() -> void:
 	hide_jobs()
 	unlock_job("job_1")
-	unlock_job("job_4")
 	for child in get_children():
 		var job = child as Job
 		if job == null: continue
@@ -23,4 +22,3 @@ func _ready() -> void:
 
 func _on_job_pressed(job_name):
 	job_selected.emit(job_name)
-	

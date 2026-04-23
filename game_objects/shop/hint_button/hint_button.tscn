@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dgd42nruwxoff" path="res://game_objects/shop/hint_button/hint_button.gd" id="1_4oq56"]
 [ext_resource type="PackedScene" uid="uid://dj0q6pgu3rit7" path="res://game_objects/shop/claw_button/claw_button.glb" id="2_exgy2"]
+[ext_resource type="AudioStream" uid="uid://ddsmufqv150ll" path="res://game_objects/shop/claw_button/toggle_off.wav" id="3_48enl"]
+[ext_resource type="AudioStream" uid="uid://c8r80ty3bkq7q" path="res://game_objects/shop/claw_button/toggle_004.ogg" id="4_ty3dp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exgy2"]
 albedo_color = Color(0, 0.3666668, 1, 1)
@@ -12,6 +14,13 @@ size = Vector3(0.4, 0.4, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ty3dp"]
 size = Vector3(0.4, 0.23, 0.595)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ty3dp"]
+playback_mode = 1
+random_pitch = 1.1892071
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("3_48enl")
 
 [node name="HintButton" type="Node3D" unique_id=514401011 node_paths=PackedStringArray("led", "button")]
 script = ExtResource("1_4oq56")
@@ -28,6 +37,12 @@ mesh = SubResource("BoxMesh_48enl")
 shape = SubResource("BoxShape3D_ty3dp")
 
 [node name="claw_button" parent="StaticBody3D" unique_id=1736897376 instance=ExtResource("2_exgy2")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2043724902]
+stream = SubResource("AudioStreamRandomizer_ty3dp")
+
+[node name="ReadySound" type="AudioStreamPlayer3D" parent="." unique_id=1387147490]
+stream = ExtResource("4_ty3dp")
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
 

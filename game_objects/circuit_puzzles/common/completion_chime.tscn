@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://did1wll8vn0wy"]
+
+[ext_resource type="AudioStream" uid="uid://blnksqyhfowks" path="res://game_objects/circuit_puzzles/common/synth_process_complete.wav" id="1_42rvd"]
+
+[node name="CompletionChime" type="AudioStreamPlayer3D" unique_id=160752500]
+stream = ExtResource("1_42rvd")

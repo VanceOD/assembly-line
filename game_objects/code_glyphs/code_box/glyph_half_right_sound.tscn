@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://rvysmsrkprj8"]
+
+[ext_resource type="AudioStream" uid="uid://ch14lqviw7x27" path="res://game_objects/code_glyphs/code_box/cancel.wav" id="1_njjma"]
+
+[node name="GlyphHalfRightSound" type="AudioStreamPlayer3D" unique_id=69759186]
+stream = ExtResource("1_njjma")

@@ -8,11 +8,14 @@ const GLYPH_OFF_MATERIAL = preload("uid://hipqai4wl71i")
 
 @export var command = ""
 @export var model: MeshInstance3D
+@export var glyph_button_press: AudioStreamPlayer3D
 
 var tween: Tween
 
 func push() -> void:
 	if model == null: return
+	if glyph_button_press != null:
+		glyph_button_press.play()
 	if tween:
 		tween.kill()
 	tween = get_tree().create_tween().bind_node(self).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)

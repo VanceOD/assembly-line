@@ -16,6 +16,11 @@ var is_valid = [false, false, false, false, false]
 @export var sequence = ["back", "back", "back", "back", "back"]
 @export var slots: Array[CodeSlot]
 @export var buttons: Array[CodeBlockButton]
+@export var glyph_correct_sound: AudioStreamPlayer3D
+@export var glyph_half_right_sound: AudioStreamPlayer3D
+@export var glyph_wrong_sound: AudioStreamPlayer3D
+@export var code_complete_sound: AudioStreamPlayer3D
+
 
 func generate_sequence(allowed_commands = ["back", "start"], allowed_buttons = ["back", "start", "loop"]):
 	sequence = []
@@ -59,6 +64,7 @@ func _physics_process(delta: float) -> void:
 				if is_valid == [true, true, true, true, true]:
 					state = State.FINISHED
 					finished.emit()
+					code_complete_sound.play()
 					return
 				else:
 					state = State.RESETTING
@@ -70,10 +76,13 @@ func _physics_process(delta: float) -> void:
 			if sequence[current_column] == command:
 				slots[current_column].change_glyph("correct")
 				is_valid[current_column] = true
+				glyph_correct_sound.play()
 			elif sequence.has(command):
 				slots[current_column].change_glyph("half_right")
+				glyph_half_right_sound.play()
 			else:
 				slots[current_column].change_glyph("incorrect")
+				glyph_wrong_sound.play()
 			current_column += 1
 			timer = 0.47
 		State.RESETTING:

@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var slide_sound: AudioStreamPlayer3D
+
 var tween: Tween
 var is_rotating = false
 var can_rotate = true
@@ -8,6 +10,8 @@ func rotate_piece():
 	if is_rotating: return
 	if not can_rotate: return
 	is_rotating = true
+	if slide_sound != null:
+		slide_sound.play()
 	if tween:
 		tween.kill()
 	tween = get_tree().create_tween().bind_node(self).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)

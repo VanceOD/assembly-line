@@ -29,6 +29,7 @@ func set_cooldown():
 func set_ready():
 	state = State.READY
 	led.set_surface_override_material(0, LED_ON_MATERIAL)
+	$ReadySound.play()
 
 func _on_static_body_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	var mouse_input_button = event as InputEventMouseButton
@@ -38,3 +39,4 @@ func _on_static_body_3d_input_event(_camera: Node, event: InputEvent, _event_pos
 	if state == State.COOLDOWN: return
 	button_pressed.emit()
 	$StaticBody3D/claw_button/AnimationPlayer.play("button_press")
+	$AudioStreamPlayer3D.play()

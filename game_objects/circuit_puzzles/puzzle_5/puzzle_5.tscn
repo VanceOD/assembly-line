@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cntiwl1fprtai" path="res://game_objects/circuit_pieces/repeater/repeater_solid.tscn" id="5_glqqm"]
 [ext_resource type="PackedScene" uid="uid://djpfmvg2a6yf8" path="res://game_objects/circuit_pieces/straight/straight.tscn" id="6_qbc0g"]
 [ext_resource type="PackedScene" uid="uid://cqk0fuf3aqkra" path="res://game_objects/circuit_pieces/repeater/repeater.tscn" id="7_em1v4"]
+[ext_resource type="PackedScene" uid="uid://did1wll8vn0wy" path="res://game_objects/circuit_puzzles/common/completion_chime.tscn" id="8_axy6j"]
 
-[node name="Puzzle5" type="Node3D" unique_id=1997296729]
+[node name="Puzzle5" type="Node3D" unique_id=1997296729 node_paths=PackedStringArray("completion_chime")]
 script = ExtResource("1_kvvqb")
+completion_chime = NodePath("CompletionChime")
 
 [node name="End" parent="." unique_id=782493646 instance=ExtResource("2_axy6j")]
 
@@ -142,3 +144,5 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.0
 
 [node name="Turn22" parent="." unique_id=2144245833 instance=ExtResource("3_0g8r5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0868578, 0, -1.0522486)
+
+[node name="CompletionChime" parent="." unique_id=160752500 instance=ExtResource("8_axy6j")]

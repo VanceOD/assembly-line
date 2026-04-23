@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://djl1g8ekkij4i"]
+
+[ext_resource type="PackedScene" uid="uid://bu6674xdpb2nr" path="res://ui/tutorial/base_tutorial_scene.tscn" id="1_skstu"]
+
+[node name="InspectionTableTutorial" unique_id=331046032 instance=ExtResource("1_skstu")]
+
+[node name="Back" parent="." index="1" unique_id=85481125]
+offset_left = -74.0
+offset_top = -138.0
+offset_right = 75.0
+offset_bottom = -85.0
+
+[node name="Label" type="Label" parent="." index="2" unique_id=886699988]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -806.5
+offset_top = -383.5
+offset_right = 806.5
+offset_bottom = 383.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "This is the inspection table. You can inspect the toys you've made and
+play with them a little (hint: try tapping on the toys). Once you've
+had your fun and made sure the toy works, click the BACK button
+on the bottom right to check for more jobs.
+
+I know what you must be thinking right now. Why does a simple toy
+like a pinwheel need circuitry and programming? These toys
+are the toys of the future. Kids don't play with analog pinwheels
+anymore. It's all digital. This pinwheel even connects to the internet
+and has an AI assistant. Trust me, this is some hi-tech ... tech. 
+Now let's make some children happy!"

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c33qd8l3ucvam"]
+
+[node name="TutorialBackground" type="ColorRect" unique_id=42219981]
+offset_left = -5092.0
+offset_top = -3204.0
+offset_right = 7954.0
+offset_bottom = 5010.0
+color = Color(0, 0, 0, 0.7058824)

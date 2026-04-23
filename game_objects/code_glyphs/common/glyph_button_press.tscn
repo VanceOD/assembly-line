@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ckoqapoph2koy"]
+
+[ext_resource type="AudioStream" uid="uid://buluhao48bgsm" path="res://game_objects/code_glyphs/common/select_4.wav" id="1_garha"]
+
+[node name="GlyphButtonPress" type="AudioStreamPlayer3D" unique_id=90141949]
+stream = ExtResource("1_garha")

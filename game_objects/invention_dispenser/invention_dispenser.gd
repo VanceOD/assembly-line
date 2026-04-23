@@ -10,14 +10,18 @@ const REMOTE_CONTROL_CAR_SYSTEM = preload("uid://b1gxkaqjqanod")
 
 @export var dispense_point: Marker3D
 @export var retract_point: Marker3D
+@export var hydraulic_sound: AudioStreamPlayer3D
+@export var dispense_sound: AudioStreamPlayer3D
 
 func _ready() -> void:
 	global_position = retract_point.global_position
 
 func clear_invention():
 	for child in get_children():
-		if child.name != "chute":
-			child.queue_free()
+		if child.name == "chute": continue
+		if child.name == "HydraulicSound": continue
+		if child.name == "DispenseSound": continue
+		child.queue_free()
 
 func spawn_invention(invention_name = "dud"):
 	var invention: Node3D
@@ -35,9 +39,12 @@ func spawn_invention(invention_name = "dud"):
 
 func activate(invention_name = "dud"):
 	var tween = get_tree().create_tween().bind_node(self).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(hydraulic_sound.play)
 	tween.tween_property(self, "global_position", dispense_point.global_position, 1.0)
 	tween.tween_interval(0.50)
 	var spawn_proper_invention = spawn_invention.bind(invention_name)
 	tween.tween_callback(spawn_proper_invention)
+	tween.tween_callback(dispense_sound.play)
 	tween.tween_interval(0.50)
+	tween.tween_callback(hydraulic_sound.play)
 	tween.tween_property(self, "global_position", retract_point.global_position, 1.0)

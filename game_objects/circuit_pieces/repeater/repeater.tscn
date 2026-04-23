@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="2_upkqn"]
 [ext_resource type="PackedScene" uid="uid://jnoyip26br0p" path="res://game_objects/circuit_pieces/logic/repeater_logic.tscn" id="3_eh37g"]
 [ext_resource type="PackedScene" uid="uid://btum8hldbtf5c" path="res://game_objects/circuit_pieces/repeater/repeater.glb" id="4_upkqn"]
+[ext_resource type="PackedScene" uid="uid://dd56ffk8g1vdx" path="res://game_objects/circuit_pieces/blank/slide_sound.tscn" id="6_8rgoe"]
 
 [node name="Repeater" type="Node3D" unique_id=74035953 node_paths=PackedStringArray("logic")]
 script = ExtResource("1_eh37g")
 logic = NodePath("RotatableBody/RepeaterLogic")
 
-[node name="RotatableBody" parent="." unique_id=984764501 instance=ExtResource("1_ehdag")]
+[node name="RotatableBody" parent="." unique_id=984764501 node_paths=PackedStringArray("slide_sound") instance=ExtResource("1_ehdag")]
+slide_sound = NodePath("SlideSound")
 
 [node name="Pin" parent="RotatableBody" unique_id=1960732561 instance=ExtResource("2_upkqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
@@ -23,5 +25,7 @@ pins = [NodePath("../Pin"), NodePath("../Pin2")]
 model = NodePath("../repeater/Cube")
 
 [node name="repeater" parent="RotatableBody" unique_id=1155043399 instance=ExtResource("4_upkqn")]
+
+[node name="SlideSound" parent="RotatableBody" unique_id=1477891813 instance=ExtResource("6_8rgoe")]
 
 [editable path="RotatableBody/repeater"]

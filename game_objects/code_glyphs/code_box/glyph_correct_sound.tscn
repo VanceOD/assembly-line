@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgdr61qdarjma"]
+
+[ext_resource type="AudioStream" uid="uid://cskvr4d2ch3j8" path="res://game_objects/code_glyphs/code_box/select_1.wav" id="1_oq1ad"]
+
+[node name="GlyphCorrectSound" type="AudioStreamPlayer3D" unique_id=1542827510]
+stream = ExtResource("1_oq1ad")

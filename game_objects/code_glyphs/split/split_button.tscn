@@ -3,14 +3,18 @@
 [ext_resource type="Script" uid="uid://b4uwdk2l4m4s7" path="res://game_objects/code_glyphs/common/code_block_button.gd" id="1_ligpx"]
 [ext_resource type="PackedScene" uid="uid://xo1dygl2yet2" path="res://game_objects/code_glyphs/common/glyph_collision_shape.tscn" id="2_co410"]
 [ext_resource type="PackedScene" uid="uid://coa5rmocp8spl" path="res://game_objects/code_glyphs/split/split.glb" id="3_74o1v"]
+[ext_resource type="PackedScene" uid="uid://ckoqapoph2koy" path="res://game_objects/code_glyphs/common/glyph_button_press.tscn" id="4_co410"]
 
-[node name="SplitButton" type="CharacterBody3D" unique_id=113507903 node_paths=PackedStringArray("model")]
+[node name="SplitButton" type="CharacterBody3D" unique_id=113507903 node_paths=PackedStringArray("model", "glyph_button_press")]
 script = ExtResource("1_ligpx")
 command = "split"
 model = NodePath("GlyphCollisionShape/split/Cube")
+glyph_button_press = NodePath("GlyphButtonPress")
 
 [node name="GlyphCollisionShape" parent="." unique_id=1576062695 instance=ExtResource("2_co410")]
 
 [node name="split" parent="GlyphCollisionShape" unique_id=354027228 instance=ExtResource("3_74o1v")]
+
+[node name="GlyphButtonPress" parent="." unique_id=90141949 instance=ExtResource("4_co410")]
 
 [editable path="GlyphCollisionShape/split"]

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bu6674xdpb2nr"]
+
+[ext_resource type="Script" uid="uid://ik43amwm774h" path="res://tutorial_scene.gd" id="1_34d2s"]
+[ext_resource type="PackedScene" uid="uid://c33qd8l3ucvam" path="res://ui/tutorial/tutorial_background.tscn" id="2_k1h46"]
+
+[node name="BaseTutorialScene" type="Control" unique_id=331046032]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_34d2s")
+
+[node name="TutorialBackground" parent="." unique_id=42219981 instance=ExtResource("2_k1h46")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6523.0
+offset_top = -4107.0
+offset_right = 6523.0
+offset_bottom = 4107.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="." unique_id=85481125]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.5
+offset_top = -53.0
+offset_right = 74.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

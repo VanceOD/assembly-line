@@ -12,12 +12,20 @@
 [ext_resource type="PackedScene" uid="uid://17r8qwxe3rdk" path="res://game_objects/code_glyphs/pause/pause_button.tscn" id="10_20bib"]
 [ext_resource type="PackedScene" uid="uid://y5nvmfoyk3sn" path="res://game_objects/code_glyphs/split/split_button.tscn" id="11_6yw05"]
 [ext_resource type="PackedScene" uid="uid://dfa2mnb5cpin5" path="res://game_objects/code_glyphs/start/start_button.tscn" id="12_7dukm"]
+[ext_resource type="PackedScene" uid="uid://cgdr61qdarjma" path="res://game_objects/code_glyphs/code_box/glyph_correct_sound.tscn" id="13_vy73b"]
+[ext_resource type="PackedScene" uid="uid://rvysmsrkprj8" path="res://game_objects/code_glyphs/code_box/glyph_half_right_sound.tscn" id="14_hi2ui"]
+[ext_resource type="PackedScene" uid="uid://bilwn8t44fc5i" path="res://game_objects/code_glyphs/code_box/glyph_wrong_sound.tscn" id="15_fge0x"]
+[ext_resource type="AudioStream" uid="uid://dkxolpbgquqat" path="res://game_objects/code_glyphs/code_box/synth_confirmation.wav" id="16_hi2ui"]
 
-[node name="CodeBox" type="Node3D" unique_id=72030964 node_paths=PackedStringArray("slots", "buttons")]
+[node name="CodeBox" type="Node3D" unique_id=72030964 node_paths=PackedStringArray("slots", "buttons", "glyph_correct_sound", "glyph_half_right_sound", "glyph_wrong_sound", "code_complete_sound")]
 script = ExtResource("1_hyak1")
 sequence = ["back", "break", "decrease", "continue", "increase"]
 slots = [NodePath("Slot1"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4"), NodePath("Slot5")]
 buttons = [NodePath("BackButton"), NodePath("BreakButton"), NodePath("ContinueButton"), NodePath("DecreaseButton"), NodePath("IncreaseButton"), NodePath("JoinButton"), NodePath("LoopButton"), NodePath("PauseButton"), NodePath("SplitButton"), NodePath("StartButton")]
+glyph_correct_sound = NodePath("SFXSource/GlyphCorrectSound")
+glyph_half_right_sound = NodePath("SFXSource/GlyphHalfRightSound")
+glyph_wrong_sound = NodePath("SFXSource/GlyphWrongSound")
+code_complete_sound = NodePath("SFXSource/CodeCompleteSound")
 
 [node name="Slot1" type="Marker3D" parent="." unique_id=1375289137]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.42723393, 0)
@@ -68,3 +76,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3992429, 0.065181196, 1.352
 
 [node name="StartButton" parent="." unique_id=1870097994 instance=ExtResource("12_7dukm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76693004, 0.065181434, 1.358779)
+
+[node name="SFXSource" type="Marker3D" parent="." unique_id=2099815707]
+
+[node name="GlyphCorrectSound" parent="SFXSource" unique_id=1542827510 instance=ExtResource("13_vy73b")]
+
+[node name="GlyphHalfRightSound" parent="SFXSource" unique_id=69759186 instance=ExtResource("14_hi2ui")]
+
+[node name="GlyphWrongSound" parent="SFXSource" unique_id=652789859 instance=ExtResource("15_fge0x")]
+
+[node name="CodeCompleteSound" type="AudioStreamPlayer3D" parent="SFXSource" unique_id=774366303]
+stream = ExtResource("16_hi2ui")

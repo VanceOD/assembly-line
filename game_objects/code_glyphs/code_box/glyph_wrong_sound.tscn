@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bilwn8t44fc5i"]
+
+[ext_resource type="AudioStream" uid="uid://b747bewflpuwn" path="res://game_objects/code_glyphs/code_box/error_008.ogg" id="1_d7q5q"]
+
+[node name="GlyphWrongSound" type="AudioStreamPlayer3D" unique_id=652789859]
+stream = ExtResource("1_d7q5q")

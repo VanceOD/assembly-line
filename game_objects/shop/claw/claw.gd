@@ -16,6 +16,9 @@ enum State {
 	RETURNING
 }
 
+@onready var hydraulic_up: AudioStreamPlayer3D = $HydraulicUp
+@onready var hydraulic_down: AudioStreamPlayer3D = $HydraulicDown
+
 @export var target_marker: Marker3D
 @export var ready_marker: Marker3D
 @export var drop_marker: Marker3D
@@ -32,6 +35,7 @@ func return_to_ready():
 	tween = get_tree().create_tween().bind_node(self).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	var ready_position = ready_marker.global_position
 	var duration = 1.25
+	tween.tween_callback(hydraulic_down.play)
 	tween.tween_property(self, "global_position", ready_position, duration)
 	tween.tween_callback(close_claw)
 	var delay = 0.50
@@ -41,6 +45,7 @@ func return_to_ready():
 func grab():
 	operation_started.emit()
 	set_state(State.GRABBING)
+	hydraulic_down.play()
 	if tween: tween.kill()
 	tween = get_tree().create_tween().bind_node(self).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	var target_position = target_marker.global_position
@@ -62,7 +67,9 @@ func drop():
 	var drop_position = drop_marker.global_position
 	var duration_to_ready = 1.10
 	var duration_to_drop = 1.35
+	tween.tween_callback(hydraulic_down.play)
 	tween.tween_property(self, "global_position", ready_position, duration_to_ready)
+	tween.tween_callback(hydraulic_down.play)
 	tween.tween_property(self, "global_position", drop_position, duration_to_drop)
 	tween.tween_callback(open_claw)
 	tween.tween_callback($GrabArea.attempt_drop)
@@ -74,11 +81,13 @@ func open_claw():
 	if claw_state == ClawState.OPEN: return
 	$ModelRoot/claw/AnimationPlayer.play("open")
 	claw_state = ClawState.OPEN
+	hydraulic_up.play()
 
 func close_claw():
 	if claw_state == ClawState.CLOSED: return
 	$ModelRoot/claw/AnimationPlayer.play("close")
 	claw_state = ClawState.CLOSED
+	hydraulic_up.play()
 
 func resolve():
 	if state == State.GRABBING:

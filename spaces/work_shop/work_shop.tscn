@@ -23,6 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://ctbaj533cugxx" path="res://game_objects/invention_dispenser/invention_dispenser.tscn" id="17_av1k2"]
 [ext_resource type="PackedScene" uid="uid://ddenn1p3xm7al" path="res://spaces/work_shop/workshop.glb" id="18_vj70h"]
 [ext_resource type="Script" uid="uid://duf8or145al8t" path="res://spaces/work_shop/screen_fade.gd" id="23_jowo3"]
+[ext_resource type="AudioStream" uid="uid://bpeky7isvsxai" path="res://spaces/work_shop/on_the_farm.ogg" id="24_51gcg"]
+[ext_resource type="AudioStream" uid="uid://bltsvnjmx6qn6" path="res://spaces/work_shop/welcome_to_towballs_crossing.mp3" id="25_um3wf"]
+[ext_resource type="AudioStream" uid="uid://b8yqi1j3tauyi" path="res://spaces/work_shop/snowed_in.mp3" id="26_ssjgg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7omej"]
 size = Vector3(3.8671093, 5.796011, 4.7)
@@ -43,6 +46,13 @@ size = Vector3(0.3022461, 2.7731934, 2.48172)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51gcg"]
 size = Vector3(2.94812, 1.1547852, 2.5136719)
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_lsktb"]
+shuffle = true
+stream_count = 3
+stream_0 = ExtResource("24_51gcg")
+stream_1 = ExtResource("25_um3wf")
+stream_2 = ExtResource("26_ssjgg")
 
 [node name="WorkShop" type="Node3D" unique_id=1330911282]
 script = ExtResource("1_p48cv")
@@ -237,6 +247,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058057785, 2.3435204, -0.1
 shape = SubResource("BoxShape3D_51gcg")
 
 [node name="ScreenFade" type="ColorRect" parent="." unique_id=1450022706]
+z_index = 10
 offset_left = -1156.0
 offset_top = -794.0
 offset_right = 3254.0
@@ -244,6 +255,9 @@ offset_bottom = 2305.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("23_jowo3")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1997486569]
+stream = SubResource("AudioStreamPlaylist_lsktb")
 
 [connection signal="job_selected" from="JobBoard" to="." method="_on_job_board_job_selected"]
 [connection signal="finished" from="AssemblyLine" to="." method="_on_assembly_line_finished"]

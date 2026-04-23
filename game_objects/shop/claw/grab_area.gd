@@ -14,6 +14,7 @@ func attempt_grab():
 	add_child(nearest_material)
 	nearest_material.is_held = true
 	material_grabbed.emit()
+	$GrabSound.play()
 
 func attempt_drop():
 	for child in get_children():

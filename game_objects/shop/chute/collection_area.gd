@@ -12,3 +12,4 @@ func _on_body_entered(body: Node3D) -> void:
 		materials.append(body.get("material_name"))
 		body.queue_free()
 		material_collected.emit(materials)
+		$WhooshSound.play()

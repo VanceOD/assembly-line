@@ -54,6 +54,8 @@ func spawn_material():
 	if material == null: return
 	material.position = $SpawnPoint.global_position
 	get_tree().root.add_child(material)
+	await get_tree().create_timer(0.40).timeout
+	$AudioStreamPlayer3D.play()
 
 func _ready() -> void:
 	fill_drop_table()

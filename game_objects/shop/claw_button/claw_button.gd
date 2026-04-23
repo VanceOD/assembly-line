@@ -24,6 +24,7 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 	button_pressed.emit()
 	can_press = false
 	$StaticBody3D/claw_button/AnimationPlayer.play("button_press")
+	$AudioStreamPlayer3D.play()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "button_press":
@@ -36,3 +37,4 @@ func set_claw_busy():
 func set_claw_idle():
 	claw_is_busy = false
 	led.set_surface_override_material(0, LED_ON_MATERIAL)
+	$ReadySound.play()

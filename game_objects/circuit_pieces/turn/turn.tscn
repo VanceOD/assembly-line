@@ -6,12 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://yowebru2gidd" path="res://game_objects/circuit_pieces/turn/turn.glb" id="2_6ygco"]
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="3_6ygco"]
 [ext_resource type="PackedScene" uid="uid://y5jcx0qyyi3r" path="res://game_objects/circuit_pieces/logic/transmission_logic.tscn" id="5_llk5i"]
+[ext_resource type="PackedScene" uid="uid://dd56ffk8g1vdx" path="res://game_objects/circuit_pieces/blank/slide_sound.tscn" id="6_ithdy"]
 
 [node name="Turn" type="Node3D" unique_id=1981407314]
 script = ExtResource("1_g63pe")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1373511507]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1373511507 node_paths=PackedStringArray("slide_sound")]
 script = ExtResource("1_llk5i")
+slide_sound = NodePath("SlideSound")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1166138220]
 shape = ExtResource("1_ujqq5")
@@ -23,6 +25,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
 
 [node name="Pin2" parent="CharacterBody3D" unique_id=545516095 instance=ExtResource("3_6ygco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+
+[node name="SlideSound" parent="CharacterBody3D" unique_id=1477891813 instance=ExtResource("6_ithdy")]
 
 [node name="TransmissionLogic" parent="." unique_id=1826943949 node_paths=PackedStringArray("pins", "model") instance=ExtResource("5_llk5i")]
 pins = [NodePath("../CharacterBody3D/Pin"), NodePath("../CharacterBody3D/Pin2")]

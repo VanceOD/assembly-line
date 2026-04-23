@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b4xy6ohydic5c"]
+
+[ext_resource type="PackedScene" uid="uid://bu6674xdpb2nr" path="res://ui/tutorial/base_tutorial_scene.tscn" id="1_iv6wa"]
+
+[node name="JobTutorial" unique_id=331046032 instance=ExtResource("1_iv6wa")]
+
+[node name="Back" parent="." index="1" unique_id=85481125]
+offset_left = -74.0
+offset_top = -348.0
+offset_right = 75.0
+offset_bottom = -295.0
+
+[node name="Label" type="Label" parent="." index="2" unique_id=865840533]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -862.5
+offset_top = -103.5
+offset_right = 862.5
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Welcome to Build-A-Toy. Your job is to build ... a toy. To get started, choose
+one of the jobs from the job board. There's only one for now but as you
+complete jobs new ones will be available to you."

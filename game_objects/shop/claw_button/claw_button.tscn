@@ -2,9 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cegfnucxpi0is" path="res://game_objects/shop/claw_button/claw_button.gd" id="1_mvgmt"]
 [ext_resource type="PackedScene" uid="uid://dj0q6pgu3rit7" path="res://game_objects/shop/claw_button/claw_button.glb" id="2_jqel8"]
+[ext_resource type="AudioStream" uid="uid://ddsmufqv150ll" path="res://game_objects/shop/claw_button/toggle_off.wav" id="3_mqij0"]
+[ext_resource type="AudioStream" uid="uid://c8r80ty3bkq7q" path="res://game_objects/shop/claw_button/toggle_004.ogg" id="4_fgay0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgay0"]
 size = Vector3(0.2, 0.23916015, 0.2)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fgay0"]
+playback_mode = 1
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("3_mqij0")
 
 [node name="ClawButton" type="Node3D" unique_id=1749629572 node_paths=PackedStringArray("led")]
 script = ExtResource("1_mvgmt")
@@ -17,6 +26,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05738693, 0)
 shape = SubResource("BoxShape3D_fgay0")
 
 [node name="claw_button" parent="StaticBody3D" unique_id=1736897376 instance=ExtResource("2_jqel8")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=137904786]
+stream = SubResource("AudioStreamRandomizer_fgay0")
+
+[node name="ReadySound" type="AudioStreamPlayer3D" parent="." unique_id=1840787675]
+stream = ExtResource("4_fgay0")
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_input_event"]
 [connection signal="animation_finished" from="StaticBody3D/claw_button/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
