@@ -3,6 +3,7 @@ extends RigidBody3D
 @export var bounce_strength := 2.5
 
 func bounce():
+	$TapSFX.play()
 	var downward_impuulse := Vector3.DOWN * bounce_strength
 	var bounce_impulse := downward_impuulse + random_vector()
 	apply_central_impulse(bounce_impulse)
@@ -23,4 +24,7 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 	if mouse_button_event.button_index != 1: return
 	if mouse_button_event.pressed != true: return
 	bounce()
-	pass # Replace with function body.
+
+
+func _on_body_entered(_body: Node) -> void:
+	$BounceSFX.play()

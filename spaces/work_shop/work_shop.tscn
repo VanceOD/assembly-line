@@ -78,6 +78,9 @@ script = ExtResource("2_0qc13")
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=273272731]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
+[node name="RemotePosition" type="Marker3D" parent="CameraPivot/Camera3D" unique_id=317623882 groups=["remote_control_marker"]]
+transform = Transform3D(1, 0, 0, 0, 0.23312274, -0.9724469, 0, 0.9724469, 0.23312274, 0.33269882, -0.18904674, -0.34953094)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1553878933]
 transform = Transform3D(-0.19936791, -0.83462816, 0.5134667, 0, 0.5239858, 0.85172695, -0.97992474, 0.169807, -0.10446597, 0, 3.1110685, 0)
 
@@ -206,6 +209,16 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
+[node name="HelpButton" type="Button" parent="." unique_id=1753488950]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -77.0
+offset_right = 119.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Help"
+
 [node name="WorkshopStaticBody" type="StaticBody3D" parent="." unique_id=974119961]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9847393, -0.16990739, 0)
 collision_layer = 32
@@ -270,5 +283,6 @@ stream = SubResource("AudioStreamPlaylist_lsktb")
 [connection signal="finished" from="CircuitBoard" to="." method="_on_circuit_board_finished"]
 [connection signal="finished" from="CodeBox" to="." method="_on_code_box_finished"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
 
 [editable path="workshop"]

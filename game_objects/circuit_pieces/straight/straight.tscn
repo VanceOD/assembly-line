@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="4_8i4t6"]
 [ext_resource type="PackedScene" uid="uid://dd56ffk8g1vdx" path="res://game_objects/circuit_pieces/blank/slide_sound.tscn" id="6_6s8wa"]
 [ext_resource type="Script" uid="uid://2jwfphsr67f0" path="res://game_objects/circuit_pieces/logic/transmission_logic.gd" id="6_7qajg"]
+[ext_resource type="PackedScene" uid="uid://ch2e0po4800vq" path="res://game_objects/circuit_pieces/power_label/power_label.tscn" id="8_mf5ad"]
 
 [node name="Straight" type="Node3D" unique_id=540918431]
 script = ExtResource("1_7qajg")
@@ -32,5 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
 script = ExtResource("6_7qajg")
 pins = [NodePath("../CharacterBody3D/Pin"), NodePath("../CharacterBody3D/Pin2")]
 model = NodePath("../CharacterBody3D/straight/Cube")
+
+[node name="PowerLabel" parent="." unique_id=999286613 instance=ExtResource("8_mf5ad")]
 
 [editable path="CharacterBody3D/straight"]

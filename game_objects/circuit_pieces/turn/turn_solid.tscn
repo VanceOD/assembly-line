@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://yowebru2gidd" path="res://game_objects/circuit_pieces/turn/turn.glb" id="3_gvlc6"]
 [ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="4_3qeuh"]
 [ext_resource type="PackedScene" uid="uid://y5jcx0qyyi3r" path="res://game_objects/circuit_pieces/logic/transmission_logic.tscn" id="5_ae7wa"]
+[ext_resource type="PackedScene" uid="uid://ch2e0po4800vq" path="res://game_objects/circuit_pieces/power_label/power_label.tscn" id="6_r8gvd"]
 
 [node name="TurnSolid" type="Node3D" unique_id=732407780]
 
@@ -24,5 +25,7 @@ surface_material_override/0 = ExtResource("4_3qeuh")
 [node name="TransmissionLogic" parent="." unique_id=1826943949 node_paths=PackedStringArray("pins", "model") instance=ExtResource("5_ae7wa")]
 pins = [NodePath("../SolidBody/Pin"), NodePath("../SolidBody/Pin2")]
 model = NodePath("../SolidBody/turn/Cube")
+
+[node name="PowerLabel" parent="." unique_id=999286613 instance=ExtResource("6_r8gvd")]
 
 [editable path="SolidBody/turn"]

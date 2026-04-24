@@ -14,11 +14,11 @@ const CIRCUIT_TUTORIAL = preload("uid://br1rlww2bjws0")
 const CODING_TUTORIAL = preload("uid://cbp4yjs0wy2og")
 const INSPECTION_TABLE_TUTORIAL = preload("uid://djl1g8ekkij4i")
 
-
 var state = State.CHOOSING_JOB
 var requested_state = State.CHOOSING_JOB
 var machine_reward = "dud"
 var job_to_unlock = "job_1"
+var is_help_pressed := false
 
 var data := {
 	"job_tutorial": false,
@@ -39,7 +39,6 @@ func _ready() -> void:
 	$ScreenFade.fade_in()
 	await get_tree().create_timer(0.40).timeout
 	$BackgroundMusic.play()
-	
 
 func _physics_process(_delta: float) -> void:
 	match state:
@@ -48,39 +47,55 @@ func _physics_process(_delta: float) -> void:
 				state = requested_state
 				$CameraPivot.move_to_marker($AssemblyLineFocalPoint)
 				$AssemblyLine.reset_assembly_line()
-				if data.get("material_tutorial", false) == false:
-					await get_tree().create_timer(1.50).timeout
-					add_child(ASSEMBLY_LINE_TUTORIAL.instantiate())
-					data.set("material_tutorial", true)
+				$BackButton.visible = true
+				return
+			if is_help_pressed == true:
+				add_child(JOB_TUTORIAL.instantiate())
+				is_help_pressed = false
+				return
 		State.ASSEMBLY_LINE:
 			if requested_state == State.CIRCUIT_BOARD:
 				state = requested_state
 				$CameraPivot.move_to_marker($CircuitBoardFocalPoint)
-				if data.get("circuit_tutorial", false) == false:
-					await get_tree().create_timer(1.50).timeout
-					add_child(CIRCUIT_TUTORIAL.instantiate())
-					data.set("circuit_tutorial", true)
+				return
+			if is_help_pressed == true:
+				add_child(ASSEMBLY_LINE_TUTORIAL.instantiate())
+				is_help_pressed = false
+				return
+			if requested_state == State.CHOOSING_JOB: return_to_job_board()
 		State.CIRCUIT_BOARD:
 			if requested_state == State.CODE_BOX:
 				state = requested_state
 				$CameraPivot.move_to_marker($CodeBoxFocalPoint)
-				if data.get("code_tutorial", false) == false:
-					await get_tree().create_timer(1.50).timeout
-					add_child(CODING_TUTORIAL.instantiate())
-					data.set("code_tutorial", true)
+				return
+			if is_help_pressed == true:
+				add_child(CIRCUIT_TUTORIAL.instantiate())
+				is_help_pressed = false
+				return
+			if requested_state == State.CHOOSING_JOB: return_to_job_board()
 		State.CODE_BOX:
 			if requested_state == State.INSPECTING_PRODUCT:
 				state = requested_state
 				$CameraPivot.move_to_marker($InspectionFocalPoint)
-				if data.get("inspection_tutorial", false) == false:
-					await get_tree().create_timer(1.50).timeout
-					add_child(INSPECTION_TABLE_TUTORIAL.instantiate())
-					data.set("inspection_tutorial", true)
+				await get_tree().create_timer(2.0).timeout
+				$InventionDispenser.activate(machine_reward)
+				return
+			if is_help_pressed == true:
+				add_child(CODING_TUTORIAL.instantiate())
+				is_help_pressed = false
+				return
+			if requested_state == State.CHOOSING_JOB: return_to_job_board()
 		State.INSPECTING_PRODUCT:
 			if requested_state == State.CHOOSING_JOB:
+				$BackButton.visible = false
 				state = requested_state
 				$CameraPivot.move_to_marker($JobBoardFocalPoint)
 				$JobBoard.unlock_job(job_to_unlock)
+				return
+			if is_help_pressed == true:
+				add_child(INSPECTION_TABLE_TUTORIAL.instantiate())
+				is_help_pressed = false
+				return
 
 func _on_job_board_job_selected(job_name: Variant) -> void:
 	if state != State.CHOOSING_JOB: return
@@ -119,6 +134,11 @@ func _on_job_board_job_selected(job_name: Variant) -> void:
 	request_state(State.ASSEMBLY_LINE)
 	$InventionDispenser.clear_invention()
 
+func return_to_job_board():
+	$BackButton.visible = false
+	state = requested_state
+	$CameraPivot.move_to_marker($JobBoardFocalPoint)
+
 func _on_assembly_line_finished() -> void:
 	request_state(State.CIRCUIT_BOARD)
 
@@ -127,11 +147,9 @@ func _on_circuit_board_finished() -> void:
 
 func _on_code_box_finished() -> void:
 	request_state(State.INSPECTING_PRODUCT)
-	await get_tree().create_timer(2.0).timeout
-	$InventionDispenser.activate(machine_reward)
-	await get_tree().create_timer(3.0).timeout
-	$BackButton.visible = true
 
 func _on_back_button_pressed() -> void:
 	request_state(State.CHOOSING_JOB)
-	$BackButton.visible = false
+
+func _on_help_button_pressed() -> void:
+	is_help_pressed = true

@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="3_2fw0p"]
 [ext_resource type="Script" uid="uid://by30lowclvwyq" path="res://game_objects/circuit_pieces/start/start_block_logic.gd" id="3_epexk"]
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="3_ev8hq"]
+[ext_resource type="PackedScene" uid="uid://ch2e0po4800vq" path="res://game_objects/circuit_pieces/power_label/power_label.tscn" id="7_wn2tg"]
 
 [node name="Start" type="Node3D" unique_id=369176258]
 script = ExtResource("1_ouyyi")
@@ -27,5 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
 script = ExtResource("3_epexk")
 pin = NodePath("../CharacterBody3D/Pin")
 model = NodePath("../CharacterBody3D/start/Cube")
+
+[node name="PowerLabel" parent="." unique_id=999286613 instance=ExtResource("7_wn2tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20752683, 0)
 
 [editable path="CharacterBody3D/start"]

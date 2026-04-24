@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="3_duhro"]
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="4_f2fpb"]
 [ext_resource type="PackedScene" uid="uid://jnoyip26br0p" path="res://game_objects/circuit_pieces/logic/repeater_logic.tscn" id="5_qub41"]
+[ext_resource type="PackedScene" uid="uid://ch2e0po4800vq" path="res://game_objects/circuit_pieces/power_label/power_label.tscn" id="7_duhro"]
 
 [node name="RepeaterSolid" type="Node3D" unique_id=809114633 node_paths=PackedStringArray("logic")]
 script = ExtResource("1_3m4oi")
@@ -27,5 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
 [node name="RepeaterLogic" parent="." unique_id=1694190573 node_paths=PackedStringArray("pins", "model") instance=ExtResource("5_qub41")]
 pins = [NodePath("../Pin"), NodePath("../Pin2")]
 model = NodePath("../SolidBody/repeater/Cube")
+
+[node name="PowerLabel" parent="." unique_id=999286613 instance=ExtResource("7_duhro")]
 
 [editable path="SolidBody/repeater"]

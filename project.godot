@@ -28,6 +28,7 @@ material=""
 conveyor_slats=""
 collection_area=""
 pin=""
+remote_control_marker=""
 
 [layer_names]
 

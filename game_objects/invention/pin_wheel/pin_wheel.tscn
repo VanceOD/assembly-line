@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b4bn3khatyew1" path="res://game_objects/invention/pin_wheel/pin_wheel.gd" id="1_jfq73"]
 [ext_resource type="Script" uid="uid://5s0fffdxgqwy" path="res://game_objects/invention/pin_wheel/clickable_area.gd" id="3_1dpyi"]
 [ext_resource type="Script" uid="uid://7fm0763ktdrp" path="res://game_objects/invention/pin_wheel/pin.gd" id="3_e1q88"]
+[ext_resource type="AudioStream" uid="uid://cuixscqflk6m3" path="res://game_objects/invention/pin_wheel/ambient_wind.wav" id="5_trojn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3xurx"]
 size = Vector3(0.2, 0.82392186, 0.2)
@@ -19,8 +20,9 @@ script = ExtResource("1_jfq73")
 
 [node name="pin_wheel" parent="." unique_id=200334150 instance=ExtResource("1_3xurx")]
 
-[node name="Pin" parent="pin_wheel/Handle" parent_id_path=PackedInt32Array(200334150, 2120528494) index="0" unique_id=1181951517]
+[node name="Pin" parent="pin_wheel/Handle" parent_id_path=PackedInt32Array(200334150, 2120528494) index="0" unique_id=1181951517 node_paths=PackedStringArray("audio_stream_player_3d")]
 script = ExtResource("3_e1q88")
+audio_stream_player_3d = NodePath("../../../AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=994653391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3960918, 0)
@@ -32,6 +34,11 @@ script = ExtResource("3_1dpyi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ClickableArea" unique_id=1634281784]
 shape = SubResource("BoxShape3D_jfq73")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1995448030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5488118, 0)
+stream = ExtResource("5_trojn")
+autoplay = true
 
 [connection signal="input_event" from="ClickableArea" to="ClickableArea" method="_on_input_event"]
 

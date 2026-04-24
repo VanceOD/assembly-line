@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="3_6ygco"]
 [ext_resource type="PackedScene" uid="uid://y5jcx0qyyi3r" path="res://game_objects/circuit_pieces/logic/transmission_logic.tscn" id="5_llk5i"]
 [ext_resource type="PackedScene" uid="uid://dd56ffk8g1vdx" path="res://game_objects/circuit_pieces/blank/slide_sound.tscn" id="6_ithdy"]
+[ext_resource type="PackedScene" uid="uid://ch2e0po4800vq" path="res://game_objects/circuit_pieces/power_label/power_label.tscn" id="8_pnffy"]
 
 [node name="Turn" type="Node3D" unique_id=1981407314]
 script = ExtResource("1_g63pe")
@@ -31,5 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
 [node name="TransmissionLogic" parent="." unique_id=1826943949 node_paths=PackedStringArray("pins", "model") instance=ExtResource("5_llk5i")]
 pins = [NodePath("../CharacterBody3D/Pin"), NodePath("../CharacterBody3D/Pin2")]
 model = NodePath("../CharacterBody3D/turn/Cube")
+
+[node name="PowerLabel" parent="." unique_id=999286613 instance=ExtResource("8_pnffy")]
 
 [editable path="CharacterBody3D/turn"]

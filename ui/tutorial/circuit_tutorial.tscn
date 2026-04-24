@@ -30,7 +30,7 @@ offset_bottom = 243.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "Here you will assemble the circuity needed to build your toy. In this
+text = "Here you will design the circuity needed to build your toy. In this
 day and age, even the most basic toys requires some digital circuitry.
 
 Connect the START chip to the END chip by rotating the GREEN chips.

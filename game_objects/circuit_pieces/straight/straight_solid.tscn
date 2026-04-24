@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="3_hfeir"]
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="3_mc27t"]
 [ext_resource type="PackedScene" uid="uid://y5jcx0qyyi3r" path="res://game_objects/circuit_pieces/logic/transmission_logic.tscn" id="4_4abk4"]
+[ext_resource type="PackedScene" uid="uid://ch2e0po4800vq" path="res://game_objects/circuit_pieces/power_label/power_label.tscn" id="6_1omx4"]
 
 [node name="StraightSolid" type="Node3D" unique_id=227351811]
 
@@ -24,5 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
 [node name="TransmissionLogic" parent="." unique_id=1826943949 node_paths=PackedStringArray("pins", "model") instance=ExtResource("4_4abk4")]
 pins = [NodePath("../SolidBody/Pin"), NodePath("../SolidBody/Pin2")]
 model = NodePath("../SolidBody/straight/Cube")
+
+[node name="PowerLabel" parent="." unique_id=999286613 instance=ExtResource("6_1omx4")]
 
 [editable path="SolidBody/straight"]

@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://baqq8q5etqlvr" path="res://game_objects/circuit_pieces/blank/resistive_material_solid.tres" id="3_almwf"]
 [ext_resource type="PackedScene" uid="uid://17r12hsebhnb" path="res://game_objects/circuit_pieces/pin/pin.tscn" id="4_aqdd4"]
 [ext_resource type="PackedScene" uid="uid://y5jcx0qyyi3r" path="res://game_objects/circuit_pieces/logic/transmission_logic.tscn" id="5_566rb"]
+[ext_resource type="PackedScene" uid="uid://ch2e0po4800vq" path="res://game_objects/circuit_pieces/power_label/power_label.tscn" id="7_almwf"]
 
 [node name="End" type="Node3D" unique_id=782493646]
 script = ExtResource("1_xd2gk")
@@ -25,5 +26,7 @@ pins = [NodePath("../SolidBody/Pin")]
 model = NodePath("../SolidBody/end/Cube")
 power_delta = 0
 is_end = true
+
+[node name="PowerLabel" parent="." unique_id=999286613 instance=ExtResource("7_almwf")]
 
 [editable path="SolidBody/end"]

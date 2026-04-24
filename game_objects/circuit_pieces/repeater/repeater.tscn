@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jnoyip26br0p" path="res://game_objects/circuit_pieces/logic/repeater_logic.tscn" id="3_eh37g"]
 [ext_resource type="PackedScene" uid="uid://btum8hldbtf5c" path="res://game_objects/circuit_pieces/repeater/repeater.glb" id="4_upkqn"]
 [ext_resource type="PackedScene" uid="uid://dd56ffk8g1vdx" path="res://game_objects/circuit_pieces/blank/slide_sound.tscn" id="6_8rgoe"]
+[ext_resource type="PackedScene" uid="uid://ch2e0po4800vq" path="res://game_objects/circuit_pieces/power_label/power_label.tscn" id="7_wsnty"]
 
 [node name="Repeater" type="Node3D" unique_id=74035953 node_paths=PackedStringArray("logic")]
 script = ExtResource("1_eh37g")
@@ -27,5 +28,7 @@ model = NodePath("../repeater/Cube")
 [node name="repeater" parent="RotatableBody" unique_id=1155043399 instance=ExtResource("4_upkqn")]
 
 [node name="SlideSound" parent="RotatableBody" unique_id=1477891813 instance=ExtResource("6_8rgoe")]
+
+[node name="PowerLabel" parent="RotatableBody" unique_id=999286613 instance=ExtResource("7_wsnty")]
 
 [editable path="RotatableBody/repeater"]

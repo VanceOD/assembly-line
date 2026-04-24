@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://p5dl01sn60pv" path="res://game_objects/invention/ball/ball.glb" id="1_o5a4i"]
 [ext_resource type="Script" uid="uid://cnjchymfjs8en" path="res://game_objects/invention/ball/ball.gd" id="1_wrrmx"]
+[ext_resource type="AudioStream" uid="uid://dtuj03owg1t3c" path="res://game_objects/invention/ball/balloon_bounce_1.wav" id="3_b6e7b"]
+[ext_resource type="AudioStream" uid="uid://c4gguao2kun1r" path="res://game_objects/invention/ball/bounce_on_3.wav" id="4_4l438"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o5a4i"]
 bounce = 0.8
@@ -13,6 +15,8 @@ radius = 0.17800638
 collision_layer = 64
 collision_mask = 288
 physics_material_override = SubResource("PhysicsMaterial_o5a4i")
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_wrrmx")
 
 [node name="ball" parent="." unique_id=1589377174 instance=ExtResource("1_o5a4i")]
@@ -20,4 +24,15 @@ script = ExtResource("1_wrrmx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2086994100]
 shape = SubResource("SphereShape3D_o5a4i")
 
+[node name="BounceSFX" type="AudioStreamPlayer3D" parent="." unique_id=831621855]
+stream = ExtResource("3_b6e7b")
+volume_db = -10.0
+unit_size = 2.0
+
+[node name="TapSFX" type="AudioStreamPlayer3D" parent="." unique_id=1626952857]
+stream = ExtResource("4_4l438")
+volume_db = -10.0
+unit_size = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]

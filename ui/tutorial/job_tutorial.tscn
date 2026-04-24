@@ -25,5 +25,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Welcome to Build-A-Toy. Your job is to build ... a toy. To get started, choose
-one of the jobs from the job board. There's only one for now but as you
-complete jobs new ones will be available to you."
+one of the jobs from the job board. As you complete jobs new ones will 
+become available to you."
