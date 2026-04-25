@@ -25,6 +25,5 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 	if mouse_button_event.pressed != true: return
 	bounce()
 
-
 func _on_body_entered(_body: Node) -> void:
 	$BounceSFX.play()

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ds84bouqa2hrk"]
+
+[ext_resource type="Script" uid="uid://cf4oklol764d5" path="res://ui/tutorial/credit_screne.gd" id="1_5rgke"]
+[ext_resource type="PackedScene" uid="uid://c33qd8l3ucvam" path="res://ui/tutorial/tutorial_background.tscn" id="1_gaobh"]
+
+[node name="CreditScrene" type="Control" unique_id=2007296677]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5rgke")
+
+[node name="TutorialBackground" parent="." unique_id=42219981 instance=ExtResource("1_gaobh")]
+layout_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=377953087]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -34.5
+offset_right = 199.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsTitle" type="Label" parent="VBoxContainer" unique_id=2023238660]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Credit for Assets"
+horizontal_alignment = 1
+
+[node name="SoundEffectsLabel" type="Label" parent="VBoxContainer" unique_id=312271039]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Sound Effects"
+
+[node name="Kenny" type="LinkButton" parent="VBoxContainer" unique_id=1580568395]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Kenny"
+uri = "https://kenney.itch.io/"
+
+[node name="ChequeredInk" type="LinkButton" parent="VBoxContainer" unique_id=1498596089]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Chequered Ink"
+uri = "https://ci.itch.io/"
+
+[node name="Spacing" type="Label" parent="VBoxContainer" unique_id=1746834562]
+layout_mode = 2
+
+[node name="BackgroundMusic" type="Label" parent="VBoxContainer" unique_id=1778785946]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "BackgroundMusic"
+vertical_alignment = 2
+
+[node name="LudoLoonStudio" type="LinkButton" parent="VBoxContainer" unique_id=25027930]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "LudoLoon Studio"
+uri = "https://ludoloonstudio.itch.io/"
+
+[node name="TowBallStudios" type="LinkButton" parent="VBoxContainer" unique_id=1842246045]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "TowBall Studios"
+uri = "https://towball.itch.io/"
+
+[node name="Space" type="Label" parent="VBoxContainer" unique_id=993223349]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=109134213]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Exit"

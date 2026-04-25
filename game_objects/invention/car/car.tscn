@@ -4,15 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://jvh6c2pars67" path="res://game_objects/invention/car/car.glb" id="1_brhxc"]
 [ext_resource type="Script" uid="uid://bsoax5yqrbe7e" path="res://game_objects/invention/car/motor_rumble.gd" id="2_kvd4d"]
 [ext_resource type="Script" uid="uid://dpy4yuhtp7g66" path="res://game_objects/invention/car/exhaust_spawn_point.gd" id="3_imd7t"]
+[ext_resource type="AudioStream" uid="uid://bkffbpdwofgwu" path="res://game_objects/invention/car/engine_circular_002.ogg" id="5_077sv"]
+[ext_resource type="Script" uid="uid://cueuo72um0ycy" path="res://game_objects/invention/car/engine_sound_effect.gd" id="6_juqb3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_brhxc"]
 size = Vector3(0.22, 0.163, 0.43591407)
 
-[node name="Car" type="CharacterBody3D" unique_id=1342727220]
+[node name="Car" type="CharacterBody3D" unique_id=1342727220 node_paths=PackedStringArray("engine_sound_effect")]
 collision_layer = 64
 collision_mask = 288
 input_ray_pickable = false
 script = ExtResource("1_1vlc3")
+engine_sound_effect = NodePath("EngineSoundEffect")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=58026861]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009765625, 0.01987598, 0.02426)
@@ -27,5 +30,12 @@ script = ExtResource("2_kvd4d")
 [node name="ExhaustSpawnPoint" type="Marker3D" parent="car/Body/ExhaustPipe" parent_id_path=PackedInt32Array(338255587, 721974583) index="0" unique_id=1875005443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04811144)
 script = ExtResource("3_imd7t")
+
+[node name="EngineSoundEffect" type="AudioStreamPlayer3D" parent="." unique_id=1151864907]
+stream = ExtResource("5_077sv")
+volume_db = -15.0
+unit_size = 2.5
+autoplay = true
+script = ExtResource("6_juqb3")
 
 [editable path="car"]

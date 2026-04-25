@@ -17,13 +17,11 @@ func _ready() -> void:
 	global_position = retract_point.global_position
 
 func clear_invention():
-	print("Clear Invention Called")
 	for child in get_children():
 		if child.name == "chute": continue
 		if child.name == "HydraulicSound": continue
 		if child.name == "DispenseSound": continue
 		child.queue_free()
-		print("%s cleared" % child)
 
 func spawn_invention(invention_name = "dud"):
 	var invention: Node3D

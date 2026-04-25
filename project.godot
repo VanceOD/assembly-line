@@ -13,7 +13,8 @@ config_version=5
 config/name="Assembly Line"
 run/main_scene="uid://bluaby0nyv80f"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="uid://2qy772y8wwo4"
+config/icon="uid://2qy772y8wwo4"
 
 [display]
 
@@ -21,6 +22,8 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://df345flrosx04"
+mouse_cursor/custom_image_hotspot=Vector2(14, 5)
 
 [global_group]
 

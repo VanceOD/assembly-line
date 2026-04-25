@@ -5,6 +5,7 @@
 [ext_resource type="Shape3D" uid="uid://1ww1hulmso0c" path="res://game_objects/invention/car/remote_control_button_shape.tres" id="2_w0df2"]
 [ext_resource type="Script" uid="uid://ofnou58ujxgq" path="res://game_objects/invention/car/remote_button_model.gd" id="3_4xsnf"]
 [ext_resource type="Script" uid="uid://culbf5xxllsoa" path="res://game_objects/invention/car/remote_controller_button.gd" id="3_nnr56"]
+[ext_resource type="AudioStream" uid="uid://bnlyxbj5tvgp0" path="res://game_objects/invention/car/click_double_off.wav" id="6_ayw5p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0df2"]
 size = Vector3(0.21, 0.086, 0.21)
@@ -41,6 +42,9 @@ script = ExtResource("3_nnr56")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BackwardArea" unique_id=693901090]
 shape = ExtResource("2_w0df2")
+
+[node name="ClickSoundEffect" type="AudioStreamPlayer3D" parent="." unique_id=162981016]
+stream = ExtResource("6_ayw5p")
 
 [connection signal="input_event" from="ForwardArea" to="ForwardArea" method="_on_input_event"]
 [connection signal="remote_button_pressed" from="ForwardArea" to="." method="_on_forward_area_remote_button_pressed"]

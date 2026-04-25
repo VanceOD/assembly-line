@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cp5d5chvxky61"]
+
+[ext_resource type="PackedScene" uid="uid://yaqr3bbqvsqv" path="res://game_objects/invention/pin_wheel/pin_wheel.tscn" id="1_6dlq0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6dlq0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xvugk"]
+sky_material = SubResource("ProceduralSkyMaterial_6dlq0")
+
+[sub_resource type="Environment" id="Environment_bamax"]
+background_mode = 2
+sky = SubResource("Sky_xvugk")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abugq"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.46, 0.44926667, 0.39560002, 1)
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_6dlq0"]
+material = SubResource("StandardMaterial3D_abugq")
+size = Vector3(30, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6dlq0"]
+size = Vector3(30, 0.5, 10)
+
+[node name="IconSource" type="Node3D" unique_id=235710038]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1462426173]
+environment = SubResource("Environment_bamax")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=405146091]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+
+[node name="Table" type="MeshInstance3D" parent="." unique_id=509183343]
+mesh = SubResource("BoxMesh_6dlq0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Table" unique_id=121421470]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/StaticBody3D" unique_id=804177762]
+shape = SubResource("BoxShape3D_6dlq0")
+
+[node name="Table2" type="MeshInstance3D" parent="." unique_id=87536102]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.3914323, -5.285511)
+mesh = SubResource("BoxMesh_6dlq0")
+
+[node name="PinWheel" parent="." unique_id=485270359 instance=ExtResource("1_6dlq0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043829292, 0.2560835, 0.07721615)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=560923437]
+transform = Transform3D(1, 0, 0, 0, 0.9650302, 0.26213866, 0, -0.26213866, 0.9650302, 0, 0.91723084, 0.63718325)

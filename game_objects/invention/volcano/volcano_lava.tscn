@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dwx28fdwtomuh" path="res://game_objects/invention/volcano/volcano_smoke_1.glb" id="1_hoskx"]
 [ext_resource type="Script" uid="uid://bs5k4d2h5f4cn" path="res://game_objects/invention/volcano/volcano_lava.gd" id="1_nbsfp"]
 [ext_resource type="Material" uid="uid://cvfyaja51l2sm" path="res://game_objects/invention/volcano/lava_material.tres" id="3_druxs"]
+[ext_resource type="AudioStream" uid="uid://dylnyl6rss4vd" path="res://game_objects/invention/volcano/explosion_crunch_004.ogg" id="4_68flm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nbsfp"]
 radius = 0.045319732
@@ -15,10 +16,16 @@ script = ExtResource("1_nbsfp")
 [node name="volcano_smoke_1" parent="." unique_id=737261005 instance=ExtResource("1_hoskx")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="Cube" parent="volcano_smoke_1" index="0" unique_id=873805285]
+[node name="Cube" parent="volcano_smoke_1" index="0" unique_id=1101271839]
 surface_material_override/0 = ExtResource("3_druxs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1620856340]
 shape = SubResource("SphereShape3D_nbsfp")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=36325368]
+stream = ExtResource("4_68flm")
+volume_db = -10.0
+unit_size = 2.0
+autoplay = true
 
 [editable path="volcano_smoke_1"]

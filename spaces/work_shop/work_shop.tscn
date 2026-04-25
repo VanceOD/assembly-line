@@ -219,6 +219,19 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Help"
 
+[node name="Credits" type="Button" parent="." unique_id=1105151145]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
 [node name="WorkshopStaticBody" type="StaticBody3D" parent="." unique_id=974119961]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9847393, -0.16990739, 0)
 collision_layer = 32
@@ -284,5 +297,6 @@ stream = SubResource("AudioStreamPlaylist_lsktb")
 [connection signal="finished" from="CodeBox" to="." method="_on_code_box_finished"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 
 [editable path="workshop"]

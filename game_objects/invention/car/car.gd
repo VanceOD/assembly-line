@@ -7,6 +7,8 @@ enum State {
 	MOVING_BACKWARD
 }
 
+@export var engine_sound_effect: EngineSoundEffect
+
 var state := State.IDLE
 var speed := 1.0
 var accel := 1.0
@@ -29,12 +31,12 @@ func _physics_process(delta: float) -> void:
 			if forward_pressed == true:
 				state = State.MOVING_FORWARD
 				forward_pressed = false
-				print("Switching to moving forward")
+				engine_sound_effect.set_state_running()
 				return
 			if backwards_pressed == true:
 				state = State.MOVING_BACKWARD
 				backwards_pressed = false
-				print("Switching to moving backward")
+				engine_sound_effect.set_state_reversing()
 				return
 		State.MOVING_FORWARD:
 			velocity += get_gravity() * delta
@@ -42,12 +44,12 @@ func _physics_process(delta: float) -> void:
 			if forward_pressed == true:
 				state = State.IDLE
 				forward_pressed = false
-				print("Switching to idle")
+				engine_sound_effect.set_state_idle()
 				return
 			if backwards_pressed == true:
 				state = State.MOVING_BACKWARD
 				backwards_pressed = false
-				print("Switching to moving_back")
+				engine_sound_effect.set_state_reversing()
 				return
 		State.MOVING_BACKWARD:
 			velocity += get_gravity() * delta
@@ -56,9 +58,11 @@ func _physics_process(delta: float) -> void:
 			if forward_pressed == true:
 				state = State.MOVING_FORWARD
 				forward_pressed = false
+				engine_sound_effect.set_state_running()
 				return
 			if backwards_pressed == true:
 				state = State.IDLE
 				backwards_pressed = false
+				engine_sound_effect.set_state_idle()
 				return
 	move_and_slide()

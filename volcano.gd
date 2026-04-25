@@ -3,10 +3,20 @@ extends CharacterBody3D
 
 @export var activity := 30.0
 @export var deactivation_speed := 6.8
+@export var activation_speed := 80.0
+@export var lava_noise: AudioStreamPlayer3D
 
-func increase_activity() -> void: activity += 5.0
+var stored_activity := 0.0
+
+func increase_activity() -> void: stored_activity += 20.0
 
 func _physics_process(delta: float) -> void:
+	# Build activity
+	if stored_activity > 0.0:
+		var amount_to_increase := clampf(activation_speed * delta, 0.0, stored_activity)
+		activity += amount_to_increase
+		stored_activity -= amount_to_increase
+	
 	# Physics
 	velocity += get_gravity() * delta
 	move_and_slide()
@@ -14,6 +24,14 @@ func _physics_process(delta: float) -> void:
 	# Volcano Activity
 	activity -= deactivation_speed * delta
 	activity = clampf(activity, 0.0, 125.0)
+	
+	# Lava Volume
+	var minimum_db := -40.0
+	var maximum_db := 0.0
+	var volume_db_range := maximum_db - minimum_db
+	var activity_percentage := activity / 125.0
+	var target_volume_db := minimum_db + (volume_db_range * activity_percentage)
+	lava_noise.volume_db = target_volume_db
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	var mouse_button_input := event as InputEventMouseButton

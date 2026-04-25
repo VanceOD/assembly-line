@@ -8,11 +8,13 @@ enum State {
 	INSPECTING_PRODUCT
 }
 
+const PATH := "user://save.dat"
 const JOB_TUTORIAL = preload("uid://b4xy6ohydic5c")
 const ASSEMBLY_LINE_TUTORIAL = preload("uid://bntpteii84nag")
 const CIRCUIT_TUTORIAL = preload("uid://br1rlww2bjws0")
 const CODING_TUTORIAL = preload("uid://cbp4yjs0wy2og")
 const INSPECTION_TABLE_TUTORIAL = preload("uid://djl1g8ekkij4i")
+const CREDIT_SCRENE = preload("uid://ds84bouqa2hrk")
 
 var state = State.CHOOSING_JOB
 var requested_state = State.CHOOSING_JOB
@@ -21,20 +23,39 @@ var job_to_unlock = "job_1"
 var is_help_pressed := false
 
 var data := {
-	"job_tutorial": false,
-	"material_tutorial": false,
-	"circuit_tutorial": false,
-	"code_tutorial": false,
-	"inspection_tutorial": false
+	"unlocked_jobs": ["job_1"]
 }
 
 func request_state(new_state: State):
 	requested_state = new_state
 
+func load_data() -> void:
+	# Check if file exists.
+	if not FileAccess.file_exists(PATH):
+		print_debug("Save data does not exists")
+		return
+	
+	# Load file if it exists.
+	var file := FileAccess.open(PATH, FileAccess.READ)
+	if file.get_error() != OK:
+		print_debug("Loading failed")
+		return
+	data = file.get_var()
+	file.close()
+
+func save_data() -> void:
+	# Save file to user directory
+	var file := FileAccess.open(PATH, FileAccess.WRITE)
+	if file.get_error() != OK:
+		print_debug("Save failed")
+		return
+	file.store_var(data)
+	file.close()
+
 func _ready() -> void:
-	if data.get("job_tutorial", false) == false:
-		add_child(JOB_TUTORIAL.instantiate())
-		data.set("Job_tutorial", true)
+	load_data()
+	if data.get("unlocked_jobs", []) is Array:
+		$JobBoard.load_job_array(data.get("unlocked_jobs"))
 	await get_tree().create_timer(1.0).timeout
 	$ScreenFade.fade_in()
 	await get_tree().create_timer(0.40).timeout
@@ -48,6 +69,7 @@ func _physics_process(_delta: float) -> void:
 				$CameraPivot.move_to_marker($AssemblyLineFocalPoint)
 				$AssemblyLine.reset_assembly_line()
 				$BackButton.visible = true
+				$Credits.visible = false
 				return
 			if is_help_pressed == true:
 				add_child(JOB_TUTORIAL.instantiate())
@@ -91,6 +113,11 @@ func _physics_process(_delta: float) -> void:
 				state = requested_state
 				$CameraPivot.move_to_marker($JobBoardFocalPoint)
 				$JobBoard.unlock_job(job_to_unlock)
+				var my_jobs = data["unlocked_jobs"] as Array
+				if not my_jobs.has(job_to_unlock):
+					my_jobs.append(job_to_unlock)
+					data["unlocked_jobs"] = my_jobs
+					save_data()
 				return
 			if is_help_pressed == true:
 				add_child(INSPECTION_TABLE_TUTORIAL.instantiate())
@@ -136,6 +163,7 @@ func _on_job_board_job_selected(job_name: Variant) -> void:
 
 func return_to_job_board():
 	$BackButton.visible = false
+	$Credits.visible = true
 	state = requested_state
 	$CameraPivot.move_to_marker($JobBoardFocalPoint)
 
@@ -153,3 +181,6 @@ func _on_back_button_pressed() -> void:
 
 func _on_help_button_pressed() -> void:
 	is_help_pressed = true
+
+func _on_credits_pressed() -> void:
+	add_child(CREDIT_SCRENE.instantiate())
