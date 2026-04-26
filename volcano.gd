@@ -5,10 +5,28 @@ extends CharacterBody3D
 @export var deactivation_speed := 6.8
 @export var activation_speed := 80.0
 @export var lava_noise: AudioStreamPlayer3D
+@export var mesh_instance: MeshInstance3D
+
 
 var stored_activity := 0.0
 
-func increase_activity() -> void: stored_activity += 20.0
+func increase_activity() -> void: stored_activity += 30.0
+
+func random_vector(intensity := 0.02) -> Vector3:
+	var x := randf_range(-intensity, intensity)
+	var y := randf_range(-intensity, intensity)
+	var z := randf_range(-intensity, intensity)
+	var result := Vector3(x, y, z)
+	return result
+
+## Shake the 3D node a specified number of frames by a specified intensity each frame.
+func shake(node: Node3D, frames := 3, intensity := 0.02) -> void:
+	var stored_position := node.position
+	for i in frames:
+		node.position = stored_position + random_vector(intensity)
+		await get_tree().physics_frame
+	node.position = stored_position
+	
 
 func _physics_process(delta: float) -> void:
 	# Build activity
@@ -39,3 +57,4 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 	if mouse_button_input.button_index != 1: return
 	if mouse_button_input.pressed != true: return
 	increase_activity()
+	shake(mesh_instance)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://br1rlww2bjws0"]
 
 [ext_resource type="PackedScene" uid="uid://bu6674xdpb2nr" path="res://ui/tutorial/base_tutorial_scene.tscn" id="1_laohw"]
+[ext_resource type="FontFile" uid="uid://1q4cklql72yy" path="res://fonts/Nunito-VariableFont_wght.ttf" id="2_0675r"]
 
 [node name="CircuitTutorial" unique_id=331046032 instance=ExtResource("1_laohw")]
 
@@ -29,6 +30,7 @@ offset_right = 797.5
 offset_bottom = 243.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0675r")
 theme_override_font_sizes/font_size = 48
 text = "Here you will design the circuity needed to build your toy. In this
 day and age, even the most basic toys requires some digital circuitry.

@@ -41,6 +41,7 @@ func _process(_delta: float) -> void:
 			if total_power > 0:
 				is_on = true
 				model.set_surface_override_material(1, CONDUCTIVE_MATERIAL_ON)
-				if power_label != null: power_label.show_power(total_power)
 				if is_end:
 					end_reached.emit()
+				else: if power_label != null: power_label.show_power(total_power)
+					

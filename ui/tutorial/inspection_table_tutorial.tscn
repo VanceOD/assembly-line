@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djl1g8ekkij4i"]
 
 [ext_resource type="PackedScene" uid="uid://bu6674xdpb2nr" path="res://ui/tutorial/base_tutorial_scene.tscn" id="1_skstu"]
+[ext_resource type="FontFile" uid="uid://1q4cklql72yy" path="res://fonts/Nunito-VariableFont_wght.ttf" id="2_cx472"]
 
 [node name="InspectionTableTutorial" unique_id=331046032 instance=ExtResource("1_skstu")]
 
@@ -23,6 +24,7 @@ offset_right = 806.5
 offset_bottom = 383.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_cx472")
 theme_override_font_sizes/font_size = 48
 text = "This is the inspection table. You can inspect the toys you've made and
 play with them a little (hint: try tapping on the toys). Once you've

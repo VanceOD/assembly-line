@@ -16,7 +16,7 @@ func rotate_piece():
 		tween.kill()
 	tween = get_tree().create_tween().bind_node(self).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	var target_rotation = rotation.y + (PI / 2)
-	tween.tween_property(self, "rotation:y", target_rotation, 0.20)
+	tween.tween_property(self, "rotation:y", target_rotation, 0.35)
 	tween.tween_property(self, "is_rotating", false, 0.0)
 
 func freeze_piece():

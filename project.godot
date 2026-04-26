@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Assembly Line"
+config/name="Build-a-Toy"
 run/main_scene="uid://bluaby0nyv80f"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-boot_splash/image="uid://2qy772y8wwo4"
+boot_splash/image="uid://ba56n7sd2a7i0"
 config/icon="uid://2qy772y8wwo4"
 
 [display]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bntpteii84nag"]
 
 [ext_resource type="PackedScene" uid="uid://bu6674xdpb2nr" path="res://ui/tutorial/base_tutorial_scene.tscn" id="1_erhdq"]
+[ext_resource type="FontFile" uid="uid://1q4cklql72yy" path="res://fonts/Nunito-VariableFont_wght.ttf" id="2_cmsua"]
 
 [node name="AssemblyLineTutorial" unique_id=331046032 instance=ExtResource("1_erhdq")]
 
@@ -23,6 +24,7 @@ offset_right = 851.0
 offset_bottom = 208.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_cmsua")
 theme_override_font_sizes/font_size = 48
 text = "This is the material line. The materials you will need to build the toy will
 be displayed at the top of the screen for a brief period of time. Memorize

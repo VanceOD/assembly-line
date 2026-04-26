@@ -26,6 +26,12 @@ func show_hint():
 	var missing_parts = get_missing_material(tally_of_collected, tally_of_requirements)
 	$Hints.display_materials(missing_parts)
 
+func hide_hint_early() -> void:
+	$Hints.hint_timer = 0.0
+	for i in 3:
+		await get_tree().physics_frame
+	$Hints.hint_timer = 0.0
+
 func check_requirements(list_of_materials):
 	var tally_of_collected = tally_parts(list_of_materials)
 	var tally_of_requirements = tally_parts(required_parts)

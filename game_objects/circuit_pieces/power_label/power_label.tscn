@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ch2e0po4800vq"]
 
+[ext_resource type="FontFile" uid="uid://1q4cklql72yy" path="res://fonts/Nunito-VariableFont_wght.ttf" id="1_2yjcc"]
 [ext_resource type="Script" uid="uid://d2x1lfcacaej3" path="res://game_objects/circuit_pieces/power_label/power_label.gd" id="1_a8t4i"]
 
 [node name="PowerLabel" type="Label3D" unique_id=999286613]
 billboard = 1
 text = "0"
+font = ExtResource("1_2yjcc")
 script = ExtResource("1_a8t4i")

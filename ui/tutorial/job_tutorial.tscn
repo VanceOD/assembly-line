@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4xy6ohydic5c"]
 
 [ext_resource type="PackedScene" uid="uid://bu6674xdpb2nr" path="res://ui/tutorial/base_tutorial_scene.tscn" id="1_iv6wa"]
+[ext_resource type="FontFile" uid="uid://1q4cklql72yy" path="res://fonts/Nunito-VariableFont_wght.ttf" id="2_7uecb"]
 
 [node name="JobTutorial" unique_id=331046032 instance=ExtResource("1_iv6wa")]
 
@@ -23,6 +24,7 @@ offset_right = 862.5
 offset_bottom = 103.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7uecb")
 theme_override_font_sizes/font_size = 48
 text = "Welcome to Build-A-Toy. Your job is to build ... a toy. To get started, choose
 one of the jobs from the job board. As you complete jobs new ones will 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ik43amwm774h" path="res://tutorial_scene.gd" id="1_34d2s"]
 [ext_resource type="PackedScene" uid="uid://c33qd8l3ucvam" path="res://ui/tutorial/tutorial_background.tscn" id="2_k1h46"]
+[ext_resource type="FontFile" uid="uid://1q4cklql72yy" path="res://fonts/Nunito-VariableFont_wght.ttf" id="3_k1h46"]
 
 [node name="BaseTutorialScene" type="Control" unique_id=331046032]
 layout_mode = 3
@@ -38,6 +39,7 @@ offset_top = -53.0
 offset_right = 74.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_k1h46")
 theme_override_font_sizes/font_size = 32
 text = "Continue"
 

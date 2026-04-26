@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvhmms5ft1ahw"]
 
-[ext_resource type="PackedScene" uid="uid://b1gxkaqjqanod" path="res://game_objects/invention/car/remote_control_car_system.tscn" id="1_xus87"]
+[ext_resource type="PackedScene" uid="uid://du20cufd253nc" path="res://game_objects/invention/volcano/volcano.tscn" id="1_xus87"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_53ko8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -54,5 +54,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.53)
 [node name="Marker3D" type="Marker3D" parent="Pivot/Camera3D" unique_id=1463429293 groups=["remote_control_marker"]]
 transform = Transform3D(1, 0, 0, 0, 0.4746106, -0.88019586, 0, 0.88019586, 0.4746106, 0.34155053, -0.13397872, -0.36769748)
 
-[node name="RemoteControlCarSystem" parent="." unique_id=724839844 instance=ExtResource("1_xus87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87352985, 0)
+[node name="Volcano" parent="." unique_id=65459937 instance=ExtResource("1_xus87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5655711, 0)

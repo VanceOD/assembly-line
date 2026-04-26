@@ -53,6 +53,14 @@ func save_data() -> void:
 	file.close()
 
 func _ready() -> void:
+	if OS.has_feature("web"):
+		$Credits.position -= Vector2(150.0, 0.0)
+		$BackButton.position -= Vector2(150.0, 0.0)
+	#elif OS.has_feature("android"):
+		#$BackButton.position -= Vector2(20.0, 20.0)
+		#$Credits.position -= Vector2(20.0, 20.0)
+		#$HelpButton.position += Vector2(20.0, -20.0)
+	return_to_job_board()
 	load_data()
 	if data.get("unlocked_jobs", []) is Array:
 		$JobBoard.load_job_array(data.get("unlocked_jobs"))
@@ -109,9 +117,10 @@ func _physics_process(_delta: float) -> void:
 			if requested_state == State.CHOOSING_JOB: return_to_job_board()
 		State.INSPECTING_PRODUCT:
 			if requested_state == State.CHOOSING_JOB:
-				$BackButton.visible = false
-				state = requested_state
-				$CameraPivot.move_to_marker($JobBoardFocalPoint)
+				return_to_job_board()
+				#$BackButton.visible = false
+				#state = requested_state
+				#$CameraPivot.move_to_marker($JobBoardFocalPoint, Vector3(0.0, 0.0, 0.0))
 				$JobBoard.unlock_job(job_to_unlock)
 				var my_jobs = data["unlocked_jobs"] as Array
 				if not my_jobs.has(job_to_unlock):
@@ -165,7 +174,7 @@ func return_to_job_board():
 	$BackButton.visible = false
 	$Credits.visible = true
 	state = requested_state
-	$CameraPivot.move_to_marker($JobBoardFocalPoint)
+	$CameraPivot.move_to_marker($JobBoardFocalPoint, Vector3(-10.0, 0.0, 0.0))
 
 func _on_assembly_line_finished() -> void:
 	request_state(State.CIRCUIT_BOARD)
@@ -178,6 +187,7 @@ func _on_code_box_finished() -> void:
 
 func _on_back_button_pressed() -> void:
 	request_state(State.CHOOSING_JOB)
+	$AssemblyLine.hide_hint_early()
 
 func _on_help_button_pressed() -> void:
 	is_help_pressed = true

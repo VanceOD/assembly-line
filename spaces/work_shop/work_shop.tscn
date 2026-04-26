@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://6qey7qe4lbap" path="res://spaces/work_shop/hints.gd" id="11_f84q3"]
 [ext_resource type="PackedScene" uid="uid://b5vuytfo70nji" path="res://game_objects/shop/hint_button/hint_button.tscn" id="13_2on23"]
 [ext_resource type="PackedScene" uid="uid://ctbaj533cugxx" path="res://game_objects/invention_dispenser/invention_dispenser.tscn" id="17_av1k2"]
+[ext_resource type="FontFile" uid="uid://1q4cklql72yy" path="res://fonts/Nunito-VariableFont_wght.ttf" id="17_ssjgg"]
 [ext_resource type="PackedScene" uid="uid://ddenn1p3xm7al" path="res://spaces/work_shop/workshop.glb" id="18_vj70h"]
 [ext_resource type="Script" uid="uid://duf8or145al8t" path="res://spaces/work_shop/screen_fade.gd" id="23_jowo3"]
 [ext_resource type="AudioStream" uid="uid://bpeky7isvsxai" path="res://spaces/work_shop/on_the_farm.ogg" id="24_51gcg"]
@@ -85,7 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 0.23312274, -0.9724469, 0, 0.9724469, 0.2331
 transform = Transform3D(-0.19936791, -0.83462816, 0.5134667, 0, 0.5239858, 0.85172695, -0.97992474, 0.169807, -0.10446597, 0, 3.1110685, 0)
 
 [node name="JobBoardFocalPoint" type="Marker3D" parent="." unique_id=1439563034]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.523657, 0.30851746, 0.65667725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.523657, 0.94946754, 0.65667725)
 
 [node name="AssemblyLineFocalPoint" type="Marker3D" parent="." unique_id=1338011720]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.7880108, 0.61566144, 0, -0.6156615, 0.78801066, -11.00998, 0, 0)
@@ -156,9 +157,25 @@ drop_marker = NodePath("../DropperPosition")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6197987, 0.11365509, 0.7642665)
 claw = NodePath("../Claw")
 
-[node name="Hints" type="Node3D" parent="AssemblyLine" unique_id=640759514]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0062642, -0.9106171)
+[node name="Hints" type="Node3D" parent="AssemblyLine" unique_id=640759514 node_paths=PackedStringArray("hint_shown_position", "hint_hide_position")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4010289, -0.9106171)
 script = ExtResource("11_f84q3")
+hint_shown_position = NodePath("HintShownPosition")
+hint_hide_position = NodePath("HintHidePosition")
+
+[node name="HintShownPosition" type="Marker3D" parent="AssemblyLine/Hints" unique_id=641471609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.00998, 1.0062642, -0.9106171)
+top_level = true
+
+[node name="HintHidePosition" type="Marker3D" parent="AssemblyLine/Hints" unique_id=2092868209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.00998, 2.3588989, -0.9106171)
+top_level = true
+
+[node name="HintLabel" type="Label3D" parent="AssemblyLine/Hints" unique_id=1641441634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34306908, 0)
+billboard = 1
+text = "Required Material:"
+font = ExtResource("17_ssjgg")
 
 [node name="MaterialDespawn" type="Area3D" parent="AssemblyLine" unique_id=286205201]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9645047, -2.8485613, 0)
@@ -206,6 +223,7 @@ offset_left = -123.0
 offset_top = -77.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("17_ssjgg")
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
@@ -216,6 +234,7 @@ anchor_bottom = 1.0
 offset_top = -77.0
 offset_right = 119.0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("17_ssjgg")
 theme_override_font_sizes/font_size = 50
 text = "Help"
 
@@ -229,6 +248,7 @@ offset_left = -179.0
 offset_top = -77.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("17_ssjgg")
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 
