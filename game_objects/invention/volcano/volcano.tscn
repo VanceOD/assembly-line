@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du20cufd253nc"]
 
-[ext_resource type="Script" uid="uid://dyuisp7dy0e2n" path="res://volcano.gd" id="1_drqv6"]
+[ext_resource type="Script" uid="uid://dyuisp7dy0e2n" path="res://game_objects/invention/volcano/volcano.gd" id="1_drqv6"]
 [ext_resource type="PackedScene" uid="uid://cqxuu846destm" path="res://game_objects/invention/volcano/volcano.glb" id="2_lb7kl"]
 [ext_resource type="Script" uid="uid://3wpp035p4w0w" path="res://game_objects/invention/volcano/spawn_logic.gd" id="3_lb7kl"]
 [ext_resource type="AudioStream" uid="uid://bpo8e7uofgh1" path="res://game_objects/invention/volcano/blowing_bubbles_2.wav" id="4_0k344"]
