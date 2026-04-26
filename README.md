@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is the source code for [Gamedev.js Jam 2026](https://itch.io/jam/gamedevjs-2026). Normally I keep my repositories private because I'm not particularly proud of my coding skills, but one of the challenges for this game jam is the [Open Source Challenge](https://gamedevjs.com/jam/2026/#challenge-opensource). So I figured, why not. And if anyone finds this code helpful in any way, then that's a plus.
+This is the source code for my [Gamedev.js Jam 2026](https://itch.io/jam/gamedevjs-2026) entry. Normally I keep my repositories private because I'm not particularly proud of my coding skills, but one of the challenges for this game jam is the [Open Source Challenge](https://gamedevjs.com/jam/2026/#challenge-opensource). So I figured, why not. And if anyone finds this code helpful in any way, then that's a plus.
 
 
 
@@ -46,10 +46,17 @@ Credit for some of the assets go to ...
 
 
 
+Everything else I made myself. Please check them out.
+
+
+
 ### License
 
-Code: Licensed under the MIT License
+**Code**: Licensed under the MIT License
 
-Assets: Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)
-Credit: Rythim Man (Turtle Gaming)
+**Assets**: Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+
+
+**Credit**: Rythim Man (Turtle Gaming)
 
