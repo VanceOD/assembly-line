@@ -28,7 +28,7 @@ theme_override_fonts/font = ExtResource("2_cx472")
 theme_override_font_sizes/font_size = 48
 text = "This is the inspection table. You can inspect the toys you've made and
 play with them a little (hint: try tapping on the toys). Once you've
-had your fun and made sure the toy works, click the BACK button
+had your fun and made sure the toy works, click the NEXT button
 on the bottom right to check for more jobs.
 
 I know what you must be thinking right now. Why does a simple toy

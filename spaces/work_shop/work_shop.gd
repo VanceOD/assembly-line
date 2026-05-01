@@ -21,6 +21,7 @@ var requested_state = State.CHOOSING_JOB
 var machine_reward = "dud"
 var job_to_unlock = "job_1"
 var is_help_pressed := false
+var hint_timer := 10.0
 
 var data := {
 	"unlocked_jobs": ["job_1"]
@@ -68,8 +69,10 @@ func _ready() -> void:
 	$ScreenFade.fade_in()
 	await get_tree().create_timer(0.40).timeout
 	$BackgroundMusic.play()
+	await get_tree().create_timer(0.80).timeout
+	$Credits.wave()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	match state:
 		State.CHOOSING_JOB:
 			if requested_state == State.ASSEMBLY_LINE:
@@ -77,50 +80,87 @@ func _physics_process(_delta: float) -> void:
 				$CameraPivot.move_to_marker($AssemblyLineFocalPoint)
 				$AssemblyLine.reset_assembly_line()
 				$BackButton.visible = true
+				$BackButton.text = "Home"
 				$Credits.visible = false
+				if data.get("unlocked_jobs").has("job_2"):
+					hint_timer = 100.0
+				else:
+					hint_timer = 10.0
 				return
 			if is_help_pressed == true:
 				add_child(JOB_TUTORIAL.instantiate())
 				is_help_pressed = false
 				return
+			if hint_timer > 0.0:
+				hint_timer -= delta
+			else:
+				hint_timer = 100.0
+				$HelpButton.wave()
 		State.ASSEMBLY_LINE:
 			if requested_state == State.CIRCUIT_BOARD:
 				state = requested_state
 				$CameraPivot.move_to_marker($CircuitBoardFocalPoint)
+				if data.get("unlocked_jobs").has("job_2"):
+					hint_timer = 100.0
+				else:
+					hint_timer = 10.0
 				return
 			if is_help_pressed == true:
 				add_child(ASSEMBLY_LINE_TUTORIAL.instantiate())
 				is_help_pressed = false
 				return
 			if requested_state == State.CHOOSING_JOB: return_to_job_board()
+			if hint_timer > 0.0:
+				hint_timer -= delta
+			else:
+				hint_timer = 100.0
+				$HelpButton.wave()
 		State.CIRCUIT_BOARD:
 			if requested_state == State.CODE_BOX:
 				state = requested_state
 				$CameraPivot.move_to_marker($CodeBoxFocalPoint)
+				if data.get("unlocked_jobs").has("job_2"):
+					hint_timer = 100.0
+				else:
+					hint_timer = 10.0
 				return
 			if is_help_pressed == true:
 				add_child(CIRCUIT_TUTORIAL.instantiate())
 				is_help_pressed = false
 				return
 			if requested_state == State.CHOOSING_JOB: return_to_job_board()
+			if hint_timer > 0.0:
+				hint_timer -= delta
+			else:
+				hint_timer = 100.0
+				$HelpButton.wave()
 		State.CODE_BOX:
 			if requested_state == State.INSPECTING_PRODUCT:
 				state = requested_state
 				$CameraPivot.move_to_marker($InspectionFocalPoint)
+				$BackButton.text = "Next"
 				await get_tree().create_timer(2.0).timeout
 				$InventionDispenser.activate(machine_reward)
+				if data.get("unlocked_jobs").has("job_2"):
+					hint_timer = 100.0
+				else:
+					hint_timer = 5.0
+					await get_tree().create_timer(2.0).timeout
+					$BackButton.wave(3)
 				return
 			if is_help_pressed == true:
 				add_child(CODING_TUTORIAL.instantiate())
 				is_help_pressed = false
 				return
 			if requested_state == State.CHOOSING_JOB: return_to_job_board()
+			if hint_timer > 0.0:
+				hint_timer -= delta
+			else:
+				hint_timer = 100.0
+				$HelpButton.wave()
 		State.INSPECTING_PRODUCT:
 			if requested_state == State.CHOOSING_JOB:
 				return_to_job_board()
-				#$BackButton.visible = false
-				#state = requested_state
-				#$CameraPivot.move_to_marker($JobBoardFocalPoint, Vector3(0.0, 0.0, 0.0))
 				$JobBoard.unlock_job(job_to_unlock)
 				var my_jobs = data["unlocked_jobs"] as Array
 				if not my_jobs.has(job_to_unlock):
@@ -132,6 +172,13 @@ func _physics_process(_delta: float) -> void:
 				add_child(INSPECTION_TABLE_TUTORIAL.instantiate())
 				is_help_pressed = false
 				return
+			if hint_timer > 0.0:
+				hint_timer -= delta
+			else:
+				hint_timer = 100.0
+				$HelpButton.wave()
+				await get_tree().create_timer(2.0).timeout
+				$BackButton.wave(3)
 
 func _on_job_board_job_selected(job_name: Variant) -> void:
 	if state != State.CHOOSING_JOB: return

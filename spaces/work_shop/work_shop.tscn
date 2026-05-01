@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://ddenn1p3xm7al" path="res://spaces/work_shop/workshop.glb" id="18_vj70h"]
 [ext_resource type="Script" uid="uid://duf8or145al8t" path="res://spaces/work_shop/screen_fade.gd" id="23_jowo3"]
 [ext_resource type="AudioStream" uid="uid://bpeky7isvsxai" path="res://spaces/work_shop/on_the_farm.ogg" id="24_51gcg"]
+[ext_resource type="Script" uid="uid://b2l0pb532f30g" path="res://spaces/work_shop/button_icon_logic.gd" id="24_lsktb"]
 [ext_resource type="AudioStream" uid="uid://bltsvnjmx6qn6" path="res://spaces/work_shop/welcome_to_towballs_crossing.mp3" id="25_um3wf"]
 [ext_resource type="AudioStream" uid="uid://b8yqi1j3tauyi" path="res://spaces/work_shop/snowed_in.mp3" id="26_ssjgg"]
 
@@ -226,6 +227,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("17_ssjgg")
 theme_override_font_sizes/font_size = 50
 text = "Back"
+script = ExtResource("24_lsktb")
 
 [node name="HelpButton" type="Button" parent="." unique_id=1753488950]
 anchors_preset = 2
@@ -237,6 +239,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("17_ssjgg")
 theme_override_font_sizes/font_size = 50
 text = "Help"
+script = ExtResource("24_lsktb")
 
 [node name="Credits" type="Button" parent="." unique_id=1105151145]
 anchors_preset = 3
@@ -251,6 +254,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("17_ssjgg")
 theme_override_font_sizes/font_size = 50
 text = "Credits"
+script = ExtResource("24_lsktb")
 
 [node name="WorkshopStaticBody" type="StaticBody3D" parent="." unique_id=974119961]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9847393, -0.16990739, 0)
@@ -293,6 +297,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058057785, 2.3435204, -0.1
 shape = SubResource("BoxShape3D_51gcg")
 
 [node name="ScreenFade" type="ColorRect" parent="." unique_id=1450022706]
+visible = false
 z_index = 10
 offset_left = -1156.0
 offset_top = -794.0
